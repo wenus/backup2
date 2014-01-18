@@ -1,0 +1,11 @@
+%title 去除Ruby2.0的警告提示
+
+[[../../index|首页]] - [[../index|Code]]
+==去除Ruby2.0的警告提示==
+----
+`Q`：在 `Windows` 下使用 `Ruby2.0` 的 `irb`、`pry` 等工具时，总有个讨厌的提示：`DL is deprecated, please use Fiddle`，怎么去掉？
+
+`A`：很简单，打开文件 `Ruby/lib/ruby/2.0.0/dl.rb`，将第 `8` 行的 `warn` 语句注释掉即可
+----
+<red>date</red> : 2013-07-12
+----

@@ -1,0 +1,36 @@
+snippet /       单行注释
+	-- ${0}
+snippet -       分隔注释
+	-- -------------------------------${0}
+# 代码复用
+snippet im      导入模块
+	import ${0}
+snippet imf     从 .. 导入
+	import ${1} from ${0}
+snippet ex      声明全局变量
+	export ${0}
+# 类、函数、Table
+snippet cl      类定义
+	class ${1:cl_name}
+	  ${0}
+snippet cle     类继承
+	class ${1:cl_name} extends ${2:pa_name}
+	  ${0}
+snippet wi      匿名对象
+	with ${1:cl_name}!
+	  ${0}
+snippet f       函数定义
+	${1:f_name} = (${2}) ->
+	  ${0}
+snippet t       Table
+	${1:t_name} =
+	  ${0}
+# 流程控制
+snippet fi      for .. in
+	for ${1} in ${0}
+# 输入输出
+snippet p       输出
+	print ${0}
+# 其他
+snippet .       =>
+	=> ${0}

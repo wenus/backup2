@@ -1,0 +1,13 @@
+%title Programming in D
+
+[[../../../index|首页]] - [[../../index|Code]] - [[../index|Notes]]
+==Programming in D==
+----
+<center>
+<h2>
+[[syntax|D语言基础入门]]
+----
+[[exercises|练习题]]
+</h2>
+</center>
+----

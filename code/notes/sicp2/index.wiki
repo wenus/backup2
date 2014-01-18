@@ -1,0 +1,13 @@
+%title 计算机程序的构造和解释
+
+[[../../../index|首页]] - [[../../index|Code]] - [[../index|Notes]]
+==计算机程序的构造和解释==
+----
+<center>
+<h2>
+[[syntax|基础语法]]
+----
+[[exercises|练习题]]
+</h2>
+</center>
+----

@@ -1,0 +1,11 @@
+%title The D Programming Language
+
+[[../../../index|首页]] - [[../../index|Code]] - [[../index|Reading]]
+==The D Programming Language==
+----
+<center>
+<h2>
+[[syntax|基础语法]]
+</h2>
+</center>
+----

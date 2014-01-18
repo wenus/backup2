@@ -1,0 +1,9 @@
+%title Laravel问题集锦
+
+[[../../../index|首页]] - [[../index|PHP]] - [[index|Laravel]]
+==Laravel问题集锦==
+----
+`Q`：使用`composer`安装`Laravel4`依赖时出错，部分托管在`Github`的代码无法安装
+
+`A`：试试加上`--prefer-source`参数，使用`php composer.phar install --prefer-source`进行安装，这是由于`Github`修改了`Zip`文档下载的`API`所致
+----

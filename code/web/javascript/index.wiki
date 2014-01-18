@@ -1,0 +1,9 @@
+%title JavaScript
+
+[[../../../index|首页]] - [[../index|Web]]
+==JavaScript==
+----
+<center>
+[[jquery|jQuery]]
+</center>
+----

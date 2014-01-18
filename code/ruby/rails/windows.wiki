@@ -1,0 +1,52 @@
+%title Windows下RoR开发环境的安装
+
+[[../../../index|首页]] - [[../index|Ruby]] - [[index|Rails]]
+==Windows下RoR开发环境的安装==
+----
+===安装Ruby和DevKit===
+
+# 首先上 `http://rubyinstaller.org/downloads/` 下载 `Ruby 2.0.0-pxxx.exe` 和 `DevKit-mingw64-32-xxx.exe`（`64`位系统就下载`64`位对应的版本）
+# 双击 `Ruby 2.0.0-pxxx.exe` 将其安装到 `D:\Ruby` 目录，将 `DevKit-mingw64-32-xxx.exe` 解压到 `D:\DevKit` 目录 （目录可自定义，这里只是为了方便演示）
+# 将 `D:\Ruby\bin`、`D:\DevKit\bin`、`D:\DevKit\mingw\bin` 加入环境变量。特别需要注意的是，如果你系统已经安装了 `MinGW`，则一定要确保 `D:\DevKit\bin` 放置在 `MinGW` 的环境变量前面，这是确保编译 `Gem` 包时使用的是 `DevKit` 的 `make` 程序
+# 在 `D:\DevKit` 目录上打开命令行窗口，依次执行 `ruby dk.rb init` 和 `ruby dk.rb install`，以关联 `Ruby` 和 `DevKit`
+----
+===安装Rails框架===
+
+# 打开 `C` 盘下的个人主目录（譬如 `C:\Users\Administrator`），在该目录下新建一个名为 `.gemrc` 的文件，在里面写入以下内容（如果系统提示说文件名非法，那就打开上面提到的 `msys.bat` 命令行，使用命令 `touch .gemrc` 进行创建）：
+{{{
+---
+:backtrace: false
+:benchmark: false
+:bulk_threshold: 1000
+:sources:
+- http://ruby.taobao.org/
+:update_sources: true
+:verbose: true
+install: --no-ri --no-rdoc
+update: --no-ri --no-rdoc
+}}}
+# 键入命令 `gem install rails`，安装最新的 `Rails` 框架
+# 键入命令 `rails new demo --skip-bundle` 新建 `Rails` 测试项目
+# 进入 `demo` 目录，打开 `Gemfile` 文件，将第一行的网址换成 `http://ruby.taobao.org/`，然后执行 `bundle install` 安装依赖
+# `bundle install` 会给我们自动安装上一个 `sqlite3` 驱动，而这并不是我们所要的。所以，键入命令 `gem uninstall sqlite3`，卸载掉该 `sqlite3` 包（如果提示有多个 `sqlite3` 版本，则选择 `sqlite3-xxx-x86-mingw32` 进行卸载）
+----
+===安装SQLite3支持===
+
+# 上 `http://www.sqlite.org/download.html` 下载 `sqlite-autoconf-xxx.tar.gz`，将其解压到 `D:\DevKit\sqlite3\autoconf`
+# 双击 `D:\DevKit\msys.bat`，进入 `DevKit` 的命令行界面，依次执行`cd d:`、`cd DevKit/sqlite3/autoconf`，进入 `autoconf` 目录
+# 执行 `./configure` 命令，待完成后，执行 `make`，直到运行完成
+# 依次执行命令 `cd ..`、`mkdir include lib`、`mv autoconf/sqlite3*.h include`、`mv autoconf/.libs/* lib`，确保 `D:\DevKit\sqlite3` 目录下有 `include` 和 `lib` 两个文件夹，且拷贝了上述文件
+# 将 `D:\DevKit\sqlite3\lib` 目录下的 `sqlite3.exe` 和 `libsqlite3-0.dll` 复制到 `D:\Ruby\bin` 目录（这一步很关键）
+# 键入命令 `gem install sqlite3 --platform=ruby -- --with-opt-dir=D:/DevKit/sqlite3` 以安装 `SQLite3` 对应的 `Gem` 包
+----
+===启动Rails项目===
+
+# 回到 `demo` 目录，在该目录上打开命令行执行命令 `rails s` 启动 `Rails` 应用，启动完毕后使用浏览器访问 `http://127.0.0.1:3000` 就可以看到默认的主页啦
+# 至此，整个环境安装完毕，祝使用顺利
+----
+本安装过程在 `Win7 32bit`、`rubyinstaller-2.0.0-p195`、`DevKit-mingw64-32-4.7.2-20130224-1151-sfx`、`sqlite-amalgamation-3071700` 环境下实测通过
+
+虽说基本的使用没问题了，但后续的坑还是很多，所以最省事的方法莫过于直接上 `http://bitnami.com/stack/ruby` 下载最新的 `bitnami-rubystack`，使用该集成安装包可以省去很多麻烦
+----
+<red>date</red> : 2013-06-20、2013-06-21、2013-06-24、2013-06-25
+----

@@ -1,0 +1,30 @@
+%title Symfony2基础
+
+[[../../index|首页]] - [[../index|Code]]
+==Symfony2基础==
+----
+===注意事项===
+
+# 在控制器中书写注释型路由时，只能使用双引号，不能用单引号，否则出错
+# 注释路由必须是 `/** ... */` 的形式，`/* ... */` 将出错
+----
+===控制器===
+
+# 转向（`redirect`），示例：
+{{{
+return $this->redirect($this->generateUrl('_demo_hello', array('name' => 'Ruchee')));
+}}}
+# 转发（`forward`），示例：
+{{{
+return $this->forward('AcmeDemoBundle:Demo:fancy', array('name' => $name, 'color' => 'blue'));
+}}}
+# 获取 `_GET` 数据，示例：`$this->getRequest()->query->get('name');`
+# 获取 `_POST` 数据，示例：`$this->getRequest()->request->get('name');`
+----
+===模板===
+
+# 获取 `_GET` 数据，示例：`{{ app.request.query.get('name') }}`
+# 获取 `_POST` 数据，示例：`{{ app.request.request.get('name') }}`
+----
+<red>date</red> : 2013-07-08
+----

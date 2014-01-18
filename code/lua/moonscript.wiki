@@ -1,0 +1,32 @@
+%title MoonScript语法基础
+%template code
+
+[[../../index|首页]] - [[../index|Code]] - [[index|Lua]]
+==MoonScript语法基础==
+----
+===主要特性===
+
+* 语法依赖于代码的缩进层次 [借鉴自 `Python`]
+* 使用 `import` 语法导入模块 [借鉴自 `Python`]
+* 函数调用可省略括号 [借鉴自 `Ruby`]
+* 函数最后一条语句的执行结果自动成为函数返回值 [借鉴自 `Ruby`]
+* 绝大多数流程控制语句可以当成表达式使用 [借鉴自 `Python` 和 `Ruby`]
+* 从 `Ruby` 引入 `@` 符号表示初始化参数
+* 语法简洁，表达能力强劲，可以自运行，也可编译成 `Lua`
+----
+===命令行参数===
+
+# `moon abc.moon`：直接运行 `Moon` 脚本
+# `moonc abc.moon`：将 `Moon` 源代码编译成同名的 `Lua` 文件
+# `moonc -w src_path`：监控指定目录源文件的变化 [借鉴自 `CoffeeScript`]
+# `moonc -t to_path`：指定编译后的 `Lua` 文件保存的目录
+# `moonc -w src_path -t to_path`：同时使用 `-w` 和 `-t` 参数可以实现动态编译 [等同于 `CoffeeScript` 的 `-w` 参数和 `-c` 参数联用]
+# `moonc -p abc.moon`：将编译得到的 `Lua` 代码直接输出到命令行
+# `moonc -T abc.moon`：输出语法解析树
+# `moonc -X abc.moon`：分两列对照输出 `Moon` 代码和编译后的 `Lua` 代码，`Lua` 在左，`Moon` 在右
+# `moonc -b abc.moon`：代码转储
+
+需要注意的是，参数要放在文件名的前面，如 `moonc abc.moon -T` 会报错，应该写成 `moonc -T abc.moon`
+----
+<red>date</red> : 2013-10-21
+----

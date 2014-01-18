@@ -1,0 +1,11 @@
+%title Symfony2本地运行出错
+
+[[../../index|首页]] - [[../index|Code]]
+==Symfony2本地运行出错==
+----
+`Q`：本地访问 `Symfony2` 项目的 `web/app_dev.php` 文件，提示打开文件错误
+
+`A`：首先检查 `app/cache` 和 `app/logs` 这两个文件夹是否拥有写入权限，然后执行 `php app/console cache:clear` 清除缓存，最后再检查一下是不是文件 `app/logs/dev.log` 太大导致的写入失败
+----
+<red>date</red> : 2013-07-01
+----

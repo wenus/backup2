@@ -1,0 +1,13 @@
+%title Rails Framework
+
+[[../../../index|首页]] - [[../index|Ruby]]
+==Rails Framework==
+----
+<h2>
+[[ubuntu|Ubuntu下RoR开发环境的安装]]
+----
+[[windows|Windows下RoR开发环境的安装]]
+----
+[[issue|问题集锦]]
+</h2>
+----

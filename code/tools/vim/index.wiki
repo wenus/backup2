@@ -1,0 +1,9 @@
+%title Vim
+
+[[../../../index|首页]] - [[../index|Tools]]
+==Vim==
+----
+<h2>
+[[pathogen|pathogen包管理器]]
+</h2>
+----

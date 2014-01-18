@@ -1,0 +1,11 @@
+%title Algorithm
+
+[[../../index|首页]] - [[../index|Code]]
+==Algorithm==
+----
+<center>
+<h2>
+[[subject/index|题目集锦]]
+</h2>
+</center>
+----
