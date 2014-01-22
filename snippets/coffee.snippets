@@ -10,6 +10,8 @@ snippet ///     多行正则 [可分多行，可加注释]
 	///${0}///
 snippet doc     """ .. """
 	"""${0}"""
+snippet us      严格模式
+	"use strict"${0}
 # 模块
 snippet rq      导入包
 	require '${1}'${0}
@@ -142,6 +144,10 @@ snippet dw      文本打印
 	document.writeln(${0})
 snippet r       正则 / .. /
 	/${0}/
+snippet _f      当前脚本文件路径
+	__filename${0}
+snippet _d      当前脚本目录路径
+	__dirname${0}
 # 其他
 snippet {       #{ .. }
 	#{${0}
