@@ -1,0 +1,9 @@
+%title Laravel
+
+[[../../index|首页]] - [[../index|Code]]
+==Laravel==
+----
+<h2>
+# [[routes|Laravel路由]]
+</h2>
+----

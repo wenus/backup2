@@ -1,11 +1,4 @@
-%title HTML5笔记
+%title HTML5
 
-[[../../index|首页]]
-==HTML5笔记==
-----
-<center>
-[[html5/index|HTML5元素]]
-----
-[[javascript/index|JavaScript]]
-</center>
-----
+[[../../index|首页]] - [[../index|Code]]
+==HTML5==

@@ -1,0 +1,39 @@
+%title Laravel路由
+%template code
+
+[[../../index|首页]] - [[../index|Code]] - [[index|Laravel]]
+==Laravel路由==
+----
+===路由规则===
+
+可对路由字段命名，方法是使用 `{名字}` 的形式进行标注，还可以用 `{名字?}` 表示该字段可有可无，随后紧跟的匿名函数的参数命名可随意设定，与该 `{名字}` 无必然联系
+
+如果使用了 `{名字?}` 的形式，则匿名函数的对应参数必须指定初始值，否则会出现函数调用错误，示例如下：
+{{{class="brush: php"
+Route::get('/person/{name?}/{age?}', function ($param1 = null, $param2 = null) {
+    if (!$param1 && !$param2) {
+        return 'Person Index Page';
+    } elseif ($param1 && !$param2) {
+        return "Name is {$param1}";
+    } else {
+        return "Name is {$param1} and Age is {$param2}";
+    }
+});
+
+// 当然，使用下面的形式更直观，上例只是为了说明，函数参数的命名与路由的命令没有必然联系
+
+Route::get('/person/{name?}/{age?}', function ($name = null, $age = null) {
+    // ...
+});
+}}}
+----
+===常用方法===
+
+* `Route::get()`
+* `Route::post()`
+* `Route::put()`
+* `Route::delete()`
+* `Route::any()`
+----
+<red>date</red> : 2014-01-24
+----

@@ -13,7 +13,7 @@ snippet vrq     导入包到变量
 	var ${1} = require('${2}');${0}
 snippet ex      导出变量
 	exports.${0}
-snippet mex     覆盖导出
+snippet moex    覆盖导出
 	module.exports${0}
 # 函数、流程控制
 snippet f       常规函数
@@ -87,6 +87,8 @@ snippet br      中断
 	break;${0}
 snippet re      返回
 	return ${0};
+snippet yi      转移执行 [ES6关键字]
+	yield ${0};
 snippet de      删除
 	delete ${0};
 snippet ev      执行代码
@@ -103,6 +105,18 @@ snippet udf     未定义
 	undefined${0}
 snippet arg     参数数组 [伪数组，其实是对象]
 	arguments${0}
+snippet win     Window对象
+	window${0}
+snippet doc     文档对象
+	document${0}
+snippet loc     位置对象
+	location${0}
+snippet nav     浏览器对象
+	navigator${0}
+snippet scr     屏幕对象
+	screen${0}
+snippet his     历史记录对象
+	history${0}
 snippet pie     可列举性
 	propertyIsEnumerable(${0})
 snippet p       文本打印
@@ -125,6 +139,10 @@ snippet <       { .. }
 	{ ${0} }
 snippet ?       三元运算符
 	${1} ? ${2} : ${0};
+snippet .       模拟块级作用域 [匿名函数立即调用]
+	(function () {
+	    ${0}
+	})();
 # 常用函数
 snippet ts      转换为字符串
 	toString(${1})${0}

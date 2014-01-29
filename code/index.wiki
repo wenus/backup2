@@ -1,29 +1,24 @@
-%title 编码人生
+%title 编程人生
 
 [[../index|首页]]
-==编码人生==
+==编程人生==
 ----
 <center>
 <h2>
 [[cpp/index|C++]]
-[[lua/index|Lua]]
 [[php/index|PHP]]
-[[ruby/index|Rb]]
-[[coffeescript/index|Coffee]]
 [[node/index|Node]]
 ----
-[[php_frameworks/index|PFW]]
-[[ruby_frameworks/index|RFW]]
-[[node_framewoks/index|NFW]]
-[[web/index|Web]]
-----
-[[algorithms/index|Algo]]
 [[csbase/index|CSBase]]
-[[math/index|Math]]
+[[database/index|DataBase]]
+[[html5/index|HTML5]]
+[[css3/index|CSS3]]
+[[tools/index|Tools]]
 ----
-[[bash/index|Bash]]
-[[git/index|Git]]
-[[vim/index|Vim]]
+[[thinkphp/index|TP]]
+[[codeIgniter/index|CI]]
+[[yii/index|Yii]]
+[[laravel/index|Laravel]]
 </h2>
 </center>
 ----

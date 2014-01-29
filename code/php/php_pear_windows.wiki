@@ -1,0 +1,28 @@
+%title Windows下使用Pear安装代码库笔记
+
+[[../../index|首页]] - [[../index|Code]] - [[index|PHP]]
+==Windows下使用Pear安装代码库笔记==
+----
+===安装Pear===
+
+# 访问 `http://pear.php.net/go-pear.phar` 下载 `go-pear.phar` 到 `PHP` 根目录
+# 在 `PHP` 根目录执行 `php go-pear.phar`
+# 安装位置选择 `local`
+# 一路 `Enter` 直到安装完成
+# 验证安装是否成功：`pear version`
+----
+===安装PHPUnit===
+
+# `pear config-set auto_discover 1`：设定 `Pear` 自动搜寻频道
+# `pear install --alldeps pear.phpunit.de/PHPUnit`：安装 `PHPUnit` 及其依赖库
+# `pear install phpunit/PHPUnit_Selenium`：安装 `PHPUnit_Selenium` 组件包
+# 验证安装是否成功：`phpunit --version`
+----
+===安装PHPDocumentor===
+
+# `pear config-set auto_discover 1`：设定 `Pear` 自动搜寻频道
+# `pear install phpdoc/phpDocumentor-alpha`：安装 `PHPDocumentor`
+# 验证安装是否成功：`phpdoc --version`
+----
+<red>date</red> : 2014-01-22、2014-01-24
+----
