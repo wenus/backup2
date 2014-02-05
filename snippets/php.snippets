@@ -28,13 +28,13 @@ snippet n       新建类实例
 	new ${0};
 # 代码重用
 snippet rq      require包含
-	require '${1}';${0}
+	require __DIR__.'${1}';${0}
 snippet rq.     只包含一次
-	require_once '${1}';${0}
+	require_once __DIR__.'${1}';${0}
 snippet in      include包含
-	include '${1}';${0}
+	include __DIR__.'${1}';${0}
 snippet in.     只包含一次
-	include_once '${1}';${0}
+	include_once __DIR__.'${1}';${0}
 snippet df      定义常量
 	define('${1}', ${2});${0}
 # 接口、类、方法
@@ -82,10 +82,8 @@ snippet fc      构造方法
 	function __construct (${1}) {
 	    ${0}
 	}
-snippet pfc     public构造方法
-	public function __construct (${1}) {
-	    ${0}
-	}
+snippet pac     调用父类构造方法
+	parent::__construct(${1});${0}
 snippet fd      析构方法
 	function __destruct () {
 	    ${0}
@@ -286,20 +284,22 @@ snippet req     GET、POST、COOKIE数据
 	$_REQUEST['${0}']
 snippet fil     与文件上传相关的变量数组
 	$_FILES['${0}']
-# 预定义常量
-snippet _       __ ... __
-	__${0}__
-snippet _l      __LINE__
+# 魔术常量
+snippet _l      当前行行号
 	__LINE__${0}
-snippet _f      __FILE__
+snippet _f      当前文件的完整路径名
 	__FILE__${0}
-snippet _d      __DIR__
+snippet _d      当前文件所在目录 [等价于 dirname(__FILE__)]
 	__DIR__${0}
-snippet _ff     __FUNCTION__
+snippet _ff     当前所处函数名
 	__FUNCTION__${0}
-snippet _cl     __CLASS__
+snippet _cl     当前所处类名
 	__CLASS__${0}
-snippet _na     __NAMESPACE__
+snippet _tr     当前所处内含模块名
+	__TRAIT__${0}
+snippet _me     当前所处类的方法名
+	__METHOD__${0}
+snippet _na     当前所处命名空间
 	__NAMESPACE__${0}
 #### 常用函数 ####
 snippet ra      数组生成器
@@ -411,21 +411,26 @@ snippet ?       三元运算符
 snippet .       =>
 	=> ${0}
 ################
+# Smarty模版引擎
+snippet sm_as   传递数据
+	$smarty->assign(${0});
+snippet sm_di   模版渲染
+	$smarty->display(${0});
 # CodeIgniter框架
-snippet c_ll    加载类库
+snippet ci_ll   加载类库
 	$this->load->library('${0}');
-snippet c_lm    加载模型
+snippet ci_lm   加载模型
 	$this->load->model('${0}');
-snippet c_lv    加载视图
+snippet ci_lv   加载视图
 	$this->load->view('${1}'${0});
-snippet c_lh    加载辅助函数
+snippet ci_lh   加载辅助函数
 	$this->load->helper('${0}');
-snippet c_ld    加载数据库
+snippet ci_ld   加载数据库
 	$this->load->database();${0}
-snippet c_ldf   加载数据库维护
+snippet ci_ldf  加载数据库维护
 	$this->load->dbforge();${0}
-snippet c_cl    加载配置文件
+snippet ci_cl   加载配置文件
 	$this->config->load('${0}');
-snippet c_ci    获取配置项
+snippet ci_ci   获取配置项
 	$this->config->item('${0}');
 ################
