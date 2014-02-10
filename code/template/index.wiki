@@ -1,0 +1,10 @@
+%title Template
+
+[[../../index|首页]] - [[../index|Code]]
+==Template==
+----
+<h2>
+# [[smarty_layout|Smarty的布局和使用]]
+# [[smarty_extend|扩展Smarty]]
+</h2>
+----

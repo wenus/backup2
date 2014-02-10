@@ -1,0 +1,39 @@
+%title 扩展Smarty
+%template code
+
+[[../../index|首页]] - [[../index|Code]] - [[index|Template]]
+==扩展Smarty==
+----
+===注册自定义函数、块、修饰器===
+
+使用 `registerPlugin` 可以注册自定义的模版函数/块/修饰器，依次接受五个参数，其中后两个参数可选
+
+# 插件类型：可选 `function`、`block`、`compiler`、`modifier`
+# 注册名：用于模版文件中的调用名
+# 回调函数：功能的具体实现函数
+# 是否缓存：布尔值，可选
+# 需要缓存的参数：可选
+
+下面是函数注册的简单实例，详细文档地址：[[http://www.smarty.net/docs/zh_CN/api.register.plugin.tpl|官方中文文档]]
+
+`PHP` 文件：
+{{{class="brush: php"
+<?php
+function handle ($args) {
+    $str = '';
+    for ($i = 0; $i < $args['num']; $i++) {
+        $str .= "<font color='{$args['color']}' size='{$args['size']}'>{$args['content']}</font><br/>\n";
+    }
+    return $str;
+}
+
+$smarty->registerPlugin('function', 'myfun', 'handle');
+}}}
+
+`Smarty` 模版文件：
+{{{class="brush: html"
+<{myfun num='5' color='red' size='20' content='测试'}>
+}}}
+----
+<red>date</red> : 2014-02-05
+----

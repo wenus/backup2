@@ -28,13 +28,13 @@ snippet n       新建类实例
 	new ${0};
 # 代码重用
 snippet rq      require包含
-	require __DIR__.'${1}';${0}
+	require __DIR__.'/${1}';${0}
 snippet rq.     只包含一次
-	require_once __DIR__.'${1}';${0}
+	require_once __DIR__.'/${1}';${0}
 snippet in      include包含
-	include __DIR__.'${1}';${0}
+	include __DIR__.'/${1}';${0}
 snippet in.     只包含一次
-	include_once __DIR__.'${1}';${0}
+	include_once __DIR__.'/${1}';${0}
 snippet df      定义常量
 	define('${1}', ${2});${0}
 # 接口、类、方法
@@ -412,25 +412,34 @@ snippet .       =>
 	=> ${0}
 ################
 # Smarty模版引擎
-snippet sm_as   传递数据
+snippet smas    传递数据
 	$smarty->assign(${0});
-snippet sm_di   模版渲染
+snippet smdi    模版渲染
 	$smarty->display(${0});
+# ThinkPHP框架
+snippet tpim    导入扩展类库
+	import('${0}');
+snippet tpve    导入第三方类库
+	Vendor('${0}');
+snippet tpas    传递数据
+	$this->assign(${0});
+snippet tpdi    模版渲染
+	$this->display(${0});
 # CodeIgniter框架
-snippet ci_ll   加载类库
+snippet cill    加载类库
 	$this->load->library('${0}');
-snippet ci_lm   加载模型
+snippet cilm    加载模型
 	$this->load->model('${0}');
-snippet ci_lv   加载视图
+snippet cilv    加载视图
 	$this->load->view('${1}'${0});
-snippet ci_lh   加载辅助函数
+snippet cilh    加载辅助函数
 	$this->load->helper('${0}');
-snippet ci_ld   加载数据库
+snippet cild    加载数据库
 	$this->load->database();${0}
-snippet ci_ldf  加载数据库维护
+snippet cildf   加载数据库维护
 	$this->load->dbforge();${0}
-snippet ci_cl   加载配置文件
+snippet cicl    加载配置文件
 	$this->config->load('${0}');
-snippet ci_ci   获取配置项
+snippet cici    获取配置项
 	$this->config->item('${0}');
 ################

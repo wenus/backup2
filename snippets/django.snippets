@@ -1,38 +1,35 @@
-snippet clm
-	class Meta:
-	    ordering = ['${1}']${2}
-snippet du
-	def __unicode__(self):
-	    return self.${1}
-snippet d_in 整数
-	IntegerField()${2}
-snippet d_ch 字符
-	CharField(${1})${2}
-snippet d_tx 文本
-	TextField()${1}
-snippet d_d 时间1
-	DateField()${1}
-snippet d_dt 时间2
-	DateTimeField(${1})${2}
-snippet d_im 图像
-	ImageField(${1})${2}
-snippet d_ur 链接
-	URLField()${1}
-snippet d_em 邮箱
-	EmailField()${1}
-snippet d_fk 外键
-	ForeignKey(${1})${2}
-snippet d_mtm 多对多
-	ManyToManyField(${1})${2}
-snippet d_ml 最大值
-	max_length=${1}
-snippet d_ut 上传位置
-	upload_to=${1}
-snippet d_bl 留空
-	blank=${1}
-snippet d_rtr 模板渲染
-	render_to_response('${1}')${2}
-snippet d_goo 404错误
-	get_object_or_404(${1})${2}
-snippet d_hrr
-	HttpResponseRedirect(${1})${2}
+snippet /       单行注释
+	{# ${0} #}
+snippet //      多行注释
+	{% comment %}
+	${0}
+	{% endcomment %}
+snippet .       载入变量
+	{{ ${0} }}
+# 继承相关
+snippet in      导入模板
+	{% include '${0}' %}
+snippet ex      加载父模板
+	{% extends '${0}' %}
+snippet bl      命名模块
+	{% block ${1} %}${0}{% endblock %}
+# 逻辑控制
+snippet if      if标签对
+	{% if ${1} %}${0}{% endif %}
+snippet elif    elif
+	{% elif ${0} %}
+snippet el      else
+	{% else %}${0}
+snippet for     for标签对
+	{% for ${1} in ${2} %}${0}{% endfor %}
+snippet ep      empty分句
+	{% empty %}${0}
+snippet ife     快速比较
+	{% ifequal ${1} %}${0}{% endifequal %}
+snippet ifne    反向比较
+	{% ifnotequal ${1} %}${0}{% endifequal %}
+# 单个关键字
+snippet rev     反向迭代
+	reversed${0}
+snippet fol     forloop
+	forloop${0}
