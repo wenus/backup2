@@ -1,4 +1,4 @@
-%title Laravel
+%title Discuz
 
 [[../../index|首页]] - [[../index|Code]]
-==Laravel==
+==Discuz==

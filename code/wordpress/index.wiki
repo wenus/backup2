@@ -1,4 +1,4 @@
-%title Laravel
+%title WordPress
 
 [[../../index|首页]] - [[../index|Code]]
-==Laravel==
+==WordPress==

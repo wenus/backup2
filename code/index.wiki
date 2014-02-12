@@ -1,24 +1,54 @@
-%title 编程人生
+%title 编程笔记
 
 [[../index|首页]]
-==编程人生==
+==编程笔记==
 ----
+ =编程语言=
 <center>
 <h2>
 [[cpp/index|C++]]
+[[lua/index|Lua]]
 [[php/index|PHP]]
-[[node/index|Node]]
-----
-[[csbase/index|CSBase]]
-[[database/index|DataBase]]
-[[html5/index|HTML5]]
-[[css3/index|CSS3]]
-[[tools/index|Tools]]
-----
-[[thinkphp/index|TP]]
-[[codeIgniter/index|CI]]
-[[yii/index|Yii]]
-[[laravel/index|Laravel]]
+[[python/index|PY]]
+[[ruby/index|Rb]]
+[[javascript/index|JavaScript]]
 </h2>
 </center>
+----
+ =开发框架=
+<center>
+<h2>
+[[template/index|TPL]]
+[[thinkphp/index|TP]]
+[[codeigniter/index|CI]]
+[[laravel/index|Laravel]]
+[[discuz/index|DZ]]
+[[wordpress/index|WP]]
+[[rails/index|Rails]]
+[[sinatra/index|Sinatra]]
+</h2>
+</center>
+----
+ =基础知识=
+<center>
+<h2>
+[[algorithms/index|ALGO]]
+[[csbase/index|CSBase]]
+[[database/index|DataBase]]
+[[server/index|Server]]
+</h2>
+</center>
+----
+ =其他技术=
+<center>
+<h2>
+[[node/index|Node]]
+[[mobile/index|Mobile]]
+[[html5/index|HTML5]]
+[[bash/index|Bash]]
+[[vim/index|Vim]]
+[[tools/index|Tools]]
+</h2>
+</center>
+</h2>
 ----

@@ -2,9 +2,3 @@
 
 [[../../index|首页]] - [[../index|Code]]
 ==PHP==
-----
-<h2>
-# [[syntax|PHP语法拾遗]]
-# [[php_pear_windows|Windows下使用Pear安装代码库笔记]]
-</h2>
-----

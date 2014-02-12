@@ -2,3 +2,8 @@
 
 [[../../index|首页]] - [[../index|Code]]
 ==ThinkPHP==
+----
+<h2>
+# [[base_dev_config|基本的开发配置]]
+</h2>
+----
