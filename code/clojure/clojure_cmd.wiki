@@ -1,0 +1,23 @@
+%title 在Windows命令行执行Clojure代码
+%template code
+
+[[../../index|首页]] - [[../index|Code]] - [[index|Clojure]]
+==在Windows命令行执行Clojure代码==
+----
+# 从官网下载到 `clojure-x.y.z.jar` 文件，譬如 `clojure-1.5.1.jar`
+# 在该 `jar` 文件同级目录新建文件 `clojure.bat`，内容如下：
+{{{class="brush: other"
+@ECHO OFF
+SET BIN_TARGET=%~dp0/clojure-1.5.1.jar
+java -cp "%BIN_TARGET%" clojure.main %*
+}}}
+# 将 `clojure.bat` 和 `java.exe` 所在目录加入环境变量
+# 新建测试文件 `hello.clj`，内容如下：
+{{{class="brush: clojure"
+(println "Hello, Clojure\n")
+}}}
+# 只执行：`clojure -i hello.clj`
+# 执行并进入 `REPL` 环境：`clojure -i hello.clj -r`
+----
+<red>date</red> : 2014-02-19
+----

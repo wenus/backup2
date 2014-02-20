@@ -1,11 +1,9 @@
 %title Clojure
 
-[[../../index|首页]]
+[[../../index|首页]] - [[../index|Code]]
 ==Clojure==
 ----
-<center>
 <h2>
-[[base/index|语言基础]]
+# [[clojure_cmd|在Windows命令行执行Clojure代码]]
 </h2>
-</center>
 ----

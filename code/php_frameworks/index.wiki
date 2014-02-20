@@ -2,3 +2,11 @@
 
 [[../../index|首页]] - [[../index|Code]]
 ==PHP Frameworks==
+----
+<h2>
+# [[laravel_primer|Laravel入门]]
+# [[codeigniter_base_dev_config|CodeIgniter基本的开发配置]]
+# [[thinkphp_base_dev_config|ThinkPHP基本的开发配置]]
+# [[smarty_layout|Smarty的布局和使用]]
+</h2>
+----

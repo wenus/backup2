@@ -3,48 +3,25 @@
 [[../index|首页]]
 ==编程笔记==
 ----
- =编程语言=
 <center>
 <h2>
-[[cpp/index|C++]]
-[[lua/index|Lua]]
+[[clojure/index|Clo]]
 [[php/index|PHP]]
-[[python/index|PY]]
 [[ruby/index|Rb]]
 [[javascript/index|JavaScript]]
-</h2>
-</center>
 ----
- =开发框架=
-<center>
-<h2>
-[[template/index|TPL]]
-[[thinkphp/index|TP]]
-[[codeigniter/index|CI]]
-[[laravel/index|Laravel]]
-[[discuz/index|DZ]]
-[[wordpress/index|WP]]
-[[rails/index|Rails]]
-[[sinatra/index|Sinatra]]
-</h2>
-</center>
-----
- =基础知识=
-<center>
-<h2>
 [[algorithms/index|ALGO]]
 [[csbase/index|CSBase]]
 [[database/index|DataBase]]
 [[server/index|Server]]
-</h2>
-</center>
 ----
- =其他技术=
-<center>
-<h2>
-[[node/index|Node]]
-[[mobile/index|Mobile]]
+[[clojure_frameworks/index|CFW]]
+[[php_frameworks/index|PFW]]
+[[ruby_frameworks/index|RFW]]
+[[js_frameworks/index|JFW]]
 [[html5/index|HTML5]]
+[[node/index|Node]]
+----
 [[bash/index|Bash]]
 [[vim/index|Vim]]
 [[tools/index|Tools]]

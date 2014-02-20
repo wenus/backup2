@@ -1,0 +1,49 @@
+%title ThinkPHP基本的开发配置
+%template code
+
+[[../../index|首页]] - [[../index|Code]] - [[index|PHP Frameworks]]
+==ThinkPHP基本的开发配置==
+----
+===入口文件===
+
+{{{class="brush: php"
+<?php
+
+define('APP_PATH', __DIR__.'/app/');  // 定义项目路径
+define('APP_DEBUG', true);            // 开启调试模式
+
+// 包含框架入口文件
+include __DIR__.'/ThinkPHP/ThinkPHP.php';
+}}}
+----
+===配置文件===
+
+{{{class="brush: php"
+<?php
+
+return array(
+    'SHOW_PAGE_TRACE'      => true,             // 开启页面Trace
+    'TMPL_TEMPLATE_SUFFIX' => '.tpl',           // 自定义模版文件后缀
+    'TMPL_L_DELIM'         => '<{',             // 自定义模版左定界符
+    'TMPL_R_DELIM'         => '}>',             // 自定义模版右定界符
+    'TMPL_DETECT_THEME'    => true,             // 开启模版主题自动侦测
+    'THEME_LIST'           => 'default,other',  // 可供使用的模版列表
+    'DEFAULT_THEME'        => 'default',        // 默认的模版主题
+    'DB_DSN'               => 'mysql://用户名:密码@localhost:3306/数据库名',
+    'DB_PREFIX'            => 'tp_',            // 数据库表前缀
+);
+}}}
+----
+===.htaccess===
+
+{{{class="brush: other"
+<IfModule mod_rewrite.c>
+    RewriteEngine on
+    RewriteCond %{REQUEST_FILENAME} !-d
+    RewriteCond %{REQUEST_FILENAME} !-f
+    RewriteRule ^(.*)$ index.php/$1 [QSA,PT,L]
+</IfModule>
+}}}
+----
+<red>date</red> : 2014-02-11、2014-02-12
+----
