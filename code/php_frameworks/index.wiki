@@ -4,6 +4,7 @@
 ==PHP Frameworks==
 ----
 <h2>
+# [[codeigniter_base_rules|CodeIgniter的基本规则]]
 # [[laravel_primer|Laravel入门]]
 # [[codeigniter_base_dev_config|CodeIgniter基本的开发配置]]
 # [[thinkphp_base_dev_config|ThinkPHP基本的开发配置]]

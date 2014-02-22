@@ -1,4 +1,4 @@
-%title Go
+%title GUI
 
 [[../../index|首页]] - [[../index|Code]]
-==Go==
+==GUI==

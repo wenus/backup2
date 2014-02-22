@@ -1,4 +1,4 @@
-%title Go
+%title Scala
 
 [[../../index|首页]] - [[../index|Code]]
-==Go==
+==Scala==

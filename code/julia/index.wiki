@@ -1,4 +1,4 @@
-%title Go
+%title Julia
 
 [[../../index|首页]] - [[../index|Code]]
-==Go==
+==Julia==
