@@ -6,13 +6,11 @@ snippet ie      针对IE的处理
 	<![endif]-->
 snippet !       HTML注释
 	<!-- ${0} -->
-snippet <       { .. }
-	{ ${0} }
 snippet html
 	<html${1}>
 	    ${0}
 	</html>
-snippet htmlall
+snippet all
 	<!DOCTYPE HTML>
 	<html>
 	    <head>
@@ -110,12 +108,12 @@ snippet form    表单
 	</form>
 snippet input   输入框
 	<input type="${1}"${0} />
+snippet submit  提交按钮
+	<input type="submit"${1}>${0}</button>
 snippet label   标签
 	<label${1}>${0}</label>
 snippet button  按钮
 	<button type="button"${1}>${0}</button>
-snippet submit  提交按钮
-	<button type="submit"${1}>${0}</button>
 snippet img     图片
 	<img src="${1}"${0} />
 # 常用标签

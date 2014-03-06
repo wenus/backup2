@@ -1,0 +1,13 @@
+%title 编程笔记
+
+[[../index|首页]]
+==编程笔记==
+----
+<h2>
+* [[mruby_try|浅尝MRuby]]
+* [[laravel_primer|Laravel入门]]
+* [[codeigniter_base_dev_config|CodeIgniter基本的开发配置]]
+* [[thinkphp_base_dev_config|ThinkPHP基本的开发配置]]
+* [[smarty_layout|Smarty的布局和使用]]
+</h2>
+----

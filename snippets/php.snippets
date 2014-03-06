@@ -236,7 +236,7 @@ snippet rrec    正则搜索并使用回调函数进行处理
 # 输入输出
 snippet e       输出
 	echo ${0};
-snippet pi      输出
+snippet p       输出
 	print ${0};
 snippet pf      格式化输出
 	printf("${1}"${0});
@@ -414,44 +414,40 @@ snippet .       =>
 	=> ${0}
 ################
 # Smarty模版引擎
-snippet smas    传递数据
+snippet sm_as   传递数据
 	$smarty->assign(${0});
-snippet smdi    模版渲染
+snippet sm_di   模版渲染
 	$smarty->display('${0}');
 # ThinkPHP框架
-snippet tpim    导入扩展类库
+snippet tp_im   导入扩展类库
 	import('${0}');
-snippet tpve    导入第三方类库
+snippet tp_ve   导入第三方类库
 	Vendor('${0}');
-snippet tpas    传递数据
+snippet tp_as   传递数据
 	$this->assign(${0});
-snippet tpdi    模版渲染
+snippet tp_di   模版渲染
 	$this->display('${0}');
 # CodeIgniter框架
-snippet cill    加载类库
+snippet ci_ll   加载类库
 	$this->load->library('${0}');
-snippet cilm    加载模型
+snippet ci_lm   加载模型
 	$this->load->model('${0}');
-snippet cilv    加载视图
+snippet ci_lv   加载视图
 	$this->load->view('${1}'${0});
-snippet cilh    加载辅助函数
+snippet ci_lh   加载辅助函数
 	$this->load->helper('${0}');
-snippet cild    加载数据库
+snippet ci_ld   加载数据库
 	$this->load->database();${0}
-snippet cildf   加载数据库维护类
+snippet ci_ldf  加载数据库维护类
 	$this->load->dbforge();${0}
-snippet cildu   加载数据库工具类
+snippet ci_ldu  加载数据库工具类
 	$this->load->dbutil();${0}
-snippet cicl    加载配置文件
+snippet ci_cl   加载配置文件
 	$this->config->load('${0}');
-snippet cici    获取配置项
+snippet ci_ci   获取配置项
 	$this->config->item('${0}');
-snippet cipu    获取表单数据 [put方式]
+snippet ci_pu   获取表单数据 [put方式]
 	$this->input->put('${0}');
-snippet cipo    获取表单数据 [post方式]
+snippet ci_po   获取表单数据 [post方式]
 	$this->input->post('${0}');
-snippet cismas  使用Smarty传递数据
-	$this->smarty->assign(${0});
-snippet cismdi  使用Smarty渲染模版
-	$this->smarty->display('${0}');
 ################

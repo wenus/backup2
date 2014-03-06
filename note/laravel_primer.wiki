@@ -1,0 +1,13 @@
+%title Laravel入门
+%template code
+
+[[../index|首页]] - [[index|Code]]
+==Laravel入门==
+----
+===新建项目===
+
+# 安装 `composer` 包管理器
+# `composer create-project laravel/laravel --prefer-dist project_name`
+----
+<red>date</red> : 2014-02-19
+----
