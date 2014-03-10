@@ -53,6 +53,9 @@ snippet wh      while
 	@while (${1})
 	    ${0}
 	@endwhile
+# 辅助函数
+snippet lit     生成链接
+	link_to('${1}', ${0})
 # 其他
 snippet pa      引用父片段
 	@parent${0}
@@ -64,3 +67,5 @@ snippet cho     选择
 	@choice('${0}')
 snippet .       {{ ... }}
 	{{ ${0} }}
+snippet <       {{{ ... }}}
+	{{{ ${0} }}}

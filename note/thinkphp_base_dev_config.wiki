@@ -1,7 +1,7 @@
 %title ThinkPHP基本的开发配置
 %template code
 
-[[../index|首页]] - [[index|Code]]
+[[../index|首页]] - [[index|Note]]
 ==ThinkPHP基本的开发配置==
 ----
 ===入口文件===

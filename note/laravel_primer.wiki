@@ -1,7 +1,7 @@
 %title Laravel入门
 %template code
 
-[[../index|首页]] - [[index|Code]]
+[[../index|首页]] - [[index|Note]]
 ==Laravel入门==
 ----
 ===新建项目===

@@ -1,7 +1,7 @@
 %title Smarty的布局和使用
 %template code
 
-[[../index|首页]] - [[index|Code]]
+[[../index|首页]] - [[index|Note]]
 ==Smarty的布局和使用==
 ----
 ===基本布局===

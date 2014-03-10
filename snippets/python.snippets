@@ -32,11 +32,9 @@ snippet u       Unicode字符串
 # 类、函数定义
 snippet cl      类定义（不带括号）
 	class ${1:cl_name}:
-	
 	    ${0}
 snippet cl.     类定义（带括号）
 	class ${1:cl_name} (${2}):
-
 	    ${0}
 snippet d       函数定义（不带self）
 	def ${1:f_name} (${2}):
@@ -95,7 +93,7 @@ snippet br      中断
 	break${0}
 snippet yi      返回但不结束
 	yield${0}
-snippet ps      空语句
+snippet pa      空语句
 	pass${0}
 snippet p       输出
 	print(${0})
