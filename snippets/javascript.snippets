@@ -73,6 +73,12 @@ snippet cs      case
 snippet def     default
 	default:
 	    ${0}
+snippet l       创建块级作用域 [ES6新增]
+	let ${0};
+snippet l.      块级作用域多行模式
+	let (${1}) {
+	    ${0}
+	}
 # 异常处理
 snippet thr     抛出异常
 	throw ${0};
@@ -129,36 +135,8 @@ snippet his     历史记录对象
 	history${0}
 snippet pie     可列举性
 	propertyIsEnumerable(${0})
-snippet p       文本打印
-	document.writeln(${0});
-snippet al      弹出框
-	alert(${0});
-snippet cl      终端输出
-	console.log(${0});
 snippet len     获取字符串长度
 	length${0}
-snippet l       创建块级作用域 [ES6新增]
-	let ${0};
-snippet l.      let多行模式
-	let (${1}) {
-	    ${0}
-	}
-snippet v       var
-	var ${0};
-snippet n       new
-	new ${0}
-snippet t       this
-	this${0}
-snippet r       正则 / .. /
-	/${0}/
-snippet <       { .. }
-	{ ${0} }
-snippet ?       三元运算符
-	${1} ? ${2} : ${0};
-snippet .       模拟块级作用域 [匿名函数立即调用]
-	(function () {
-	    ${0}
-	})();
 # 常用函数
 snippet ts      转换为字符串
 	toString(${1})${0}
@@ -176,6 +154,30 @@ snippet ho      仅对象本身的属性
 	hasOwnProperty(${0})
 snippet ip      是否是另一个对象的原型
 	isPrototypeOf(${0})
+# 输出
+snippet p       文本打印
+	document.writeln(${0});
+snippet al      弹出框
+	alert(${0});
+snippet cl      终端输出
+	console.log(${0});
+# 其他
+snippet v       var
+	var ${0};
+snippet n       new
+	new ${0}
+snippet t       this
+	this${0}
+snippet r       / .. /
+	/${0}/
+snippet <       { .. }
+	{ ${0} }
+snippet ?       三元运算符
+	${1} ? ${2} : ${0};
+snippet .       模拟块级作用域 [匿名函数立即调用]
+	(function () {
+	    ${0}
+	})();
 ################
 # DOM相关
 snippet gbyi    根据id取单个元素

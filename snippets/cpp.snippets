@@ -45,21 +45,6 @@ snippet fd      析构函数
 	~${1:f_name} () {
 	    ${0}
 	}
-# 异常处理
-snippet thr     抛出异常
-	throw ${0};
-snippet try     捕获异常
-	try {
-	    ${0}
-	}
-snippet cat     处理异常
-	catch (${1}) {
-	    ${0}
-	}
-snippet fin     善后处理
-	finally {
-	    ${0}
-	}
 # 函数
 snippet main    主函数
 	int main (int argc, char *argv[]) {
@@ -138,6 +123,21 @@ snippet cs      case
 snippet def     default
 	default:
 	    ${0}
+# 异常处理
+snippet thr     抛出异常
+	throw ${0};
+snippet try     捕获异常
+	try {
+	    ${0}
+	}
+snippet cat     处理异常
+	catch (${1}) {
+	    ${0}
+	}
+snippet fin     善后处理
+	finally {
+	    ${0}
+	}
 # 输入输出
 snippet p       输出
 	printf("${1}"${0});
@@ -174,12 +174,10 @@ snippet it      迭代器
 	iterator${0}
 snippet cit     只读迭代器
 	const_iterator${0}
-snippet szt     String、各个容器
+snippet szt     String、各容器的大小度量单位
 	size_type${0}
 snippet dit     两迭代器的差值
 	difference_type${0}
-snippet ex      退出并返回状态码
-	exit(${0});
 snippet re      返回
 	return ${0};
 snippet co      继续
@@ -188,6 +186,8 @@ snippet br      中断
 	break;${0}
 snippet go      跳转
 	goto ${0}
+snippet ex      退出并返回状态码
+	exit(${0});
 snippet un      无符号
 	unsigned ${0}
 snippet st      静态
@@ -214,5 +214,7 @@ snippet o       输出流
 	cout ${0}
 snippet e       错误流
 	error ${0}
+snippet l       行结束符
+	endl;${0}
 snippet .       ->
 	->${0}

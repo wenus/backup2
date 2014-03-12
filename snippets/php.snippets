@@ -24,8 +24,6 @@ snippet u       引用命名空间
 	use ${1};${0}
 snippet uas     引用命名空间并定义别名
 	use ${1} as ${2};${0}
-snippet n       新建类实例
-	new ${0};
 # 代码重用
 snippet rq      require包含
 	require __DIR__.'/${1}';${0}
@@ -42,12 +40,12 @@ snippet int     接口定义
 	interface ${1:int_name} {
 	    ${0}
 	}
-snippet cl      类定义
-	class ${1:cl_name} {
+snippet tra     内含模块定义 [用于实现Mixin]
+	trait ${1:tra_name} {
 	    ${0}
 	}
-snippet tr      内含模块定义 [用于实现Mixin]
-	trait ${1:tr_name} {
+snippet cl      类定义
+	class ${1:cl_name} {
 	    ${0}
 	}
 snippet cle     带继承的类定义
@@ -396,12 +394,12 @@ snippet yi      yield [PHP 5.5新增]
 	yield ${0};
 snippet ex      结束
 	exit(${0});
-snippet d       exit的别名
-	die(${0});
 snippet ins     检查对象是否是指定类的实例
 	instanceof ${0}
 snippet v       var
 	var ${0};
+snippet n       new
+	new ${0};
 snippet s       self::
 	self::${0}
 snippet t       $this->
@@ -418,15 +416,6 @@ snippet sm_as   传递数据
 	$smarty->assign(${0});
 snippet sm_di   模版渲染
 	$smarty->display('${0}');
-# ThinkPHP框架
-snippet tp_im   导入扩展类库
-	import('${0}');
-snippet tp_ve   导入第三方类库
-	Vendor('${0}');
-snippet tp_as   传递数据
-	$this->assign(${0});
-snippet tp_di   模版渲染
-	$this->display('${0}');
 # CodeIgniter框架
 snippet ci_ll   加载类库
 	$this->load->library('${0}');
