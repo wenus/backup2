@@ -4,9 +4,9 @@ snippet //      多行注释
 	{{--${0}
 	--}}
 # 模板复用
-snippet in      包含模板（继承当前模板的数据）
+snippet in      包含模板 [继承当前模板的数据]
 	@include('${1}')${0}
-snippet re      包含模板（不继承数据）
+snippet re      包含模板 [不继承数据]
 	@render('${1}')${0}
 snippet ex      扩展模板
 	@extends('${1}')${0}
@@ -14,7 +14,7 @@ snippet la      布局
 	@layout('${0}')
 snippet yi      向外传递数据
 	@yield('${0}')
-snippet se      填充片段
+snippet se      填充区块
 	@section('${1}')
 	    ${0}
 	@stop
@@ -29,7 +29,7 @@ snippet elif    elseif
 snippet el      else
 	@else
 	    ${0}
-snippet ul      unless（与if相反）
+snippet ul      unless [与if相反]
 	@unless (${1})
 	    ${0}
 	@endunless

@@ -10,11 +10,15 @@ snippet rq      包含库文件
 	require('${1}')${0}
 # 函数
 snippet f       多行函数定义
-	function ${1} (${2})
+	function ${1:f_name} (${2})
 	  ${0}
 	end
-snippet ff      单行函数定义
-	function ${1} (${2}) return ${0} end
+snippet f.      单行函数定义
+	function ${1:f_name} (${2}) return ${0} end
+snippet ff      匿名函数
+	function (${1})
+	  ${0}
+	end
 # 流程控制
 snippet if      if
 	if ${1} then
@@ -47,13 +51,13 @@ snippet do     do .. end
 	  ${0}
 	end
 # 协同程序
-snippet ccr     create
+snippet cre     create
 	coroutine.create(${0})
-snippet cst     status
+snippet sta     status
 	coroutine.status(${0})
-snippet cre     resume
+snippet res     resume
 	coroutine.resume(${0})
-snippet cyi     yield
+snippet yie     yield
 	coroutine.yield(${0})
 # 常用函数
 snippet dof     加载Lua源文件
@@ -88,5 +92,7 @@ snippet tab     表
 snippet p       输出
 	print(${0})
 # 其他
+snippet _v      版本号
+	_VERSION${0}
 snippet .       :: ... ::
 	::${0}::
