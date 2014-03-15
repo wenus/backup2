@@ -4,7 +4,7 @@
 ==编程笔记==
 ----
 <h2>
-* [[mruby_try|浅尝MRuby]]
+* [[lua_pilua3_note|《Programming in Lua 3rd Edition》读书笔记]]
 * [[laravel_primer|Laravel入门]]
 * [[codeigniter_base_dev_config|CodeIgniter基本的开发配置]]
 * [[thinkphp_base_dev_config|ThinkPHP基本的开发配置]]
