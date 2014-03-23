@@ -1,0 +1,60 @@
+%title MySQL基础复习
+%template code
+
+[[../index|首页]] - [[index|Note]]
+==MySQL基础复习==
+----
+===常用查询语句===
+
+* 过滤重复数据：`select distinct ...`（`distinct` 必须放在所有列名的前面，且影响的是所有列而不是某指定的一列）
+* 返回结果中从第 `2` 行开始的 `5` 行记录：`limit 1,5`，也可写作 `limit 5 offset 1`（第一行为 `0`，第二行为 `1`）
+* 通配符 `%`：任何字符出现任意次数
+* 通配符 `_`：任何字符出现一次
+* 使用正则：`regexp '正则表达式'`
+* 区分大小写的正则：`regexp binary '正则表达式'`
+* 正则转义特殊字符：就像 `PHP` 的正则处理方式一样，需要使用两个反斜杠，如 `\\.`
+* 可在 `MySQL` 交互工具中直接测试正则表达式是否匹配，总是返回 `1` 或者 `0`，如：`select 'hello 123' regexp 'lo [0-9]{3}';`
+* 分组数据：`group by ...`
+* 过滤分组：`having ...`（用法与 `where` 一样，只是 `where` 用于过滤行，而 `having` 用于过滤组）
+* `where` 和 `having` 的另一种理解：`where` 在分组之前过滤，`having` 在分组之后过滤
+* `group by` 和 `order by` 的重要区别：`order by` 可以使用自定义列名，而 `group by` 则必须使用表自己所拥有的列名
+* 多表联结：`select ... from tab1, tab2 where tab1.xx = tab2.xx ...`
+* 多种联结类型：`inner join`（交集）、`A left join B`（以表 `A` 为准）、`A right join B`（以表 `B` 为准）
+
+查询语句的书写顺序：
+# `select ...`
+# `from ...`
+# `where ...`
+# `group by ...`
+# `having ...`
+# `order by ...`
+# `limit ...`
+----
+===常用内建函数===
+
+* 获取当前日期和时间：`now()`
+* 获取日期：`date(参数)`
+* 获取时间：`time(参数)`
+* 获取年份：`year(参数)`
+* 获取月份：`month(参数)`
+* 获取天数：`day(参数)`
+* 获取星期：`dayofweek(参数)`
+* 获取小时：`hour(参数)`
+* 获取分钟：`minute(参数)`
+* 获取秒数：`second(参数)`
+* 连接字符串：`concat(参数1, 参数2, ...)`
+* 去除左右两边的空格：`trim(参数)`、`ltrim(参数)`、`rtrim(参数)`
+* 转换成大写：`upper(参数)`
+* 转换成小写：`lower(参数)`
+* 计算串的长度：`length(参数)`
+----
+===聚集函数===
+
+* 返回某列的记录条数：`count(列名)`，`count(*)` 会包含 `NULL` 值
+* 返回某列的数值之和：`sum(列名)`
+* 返回某列的平均值：`avg(列名)`
+* 返回某列的最大值：`max(列名)`
+* 返回某列的最小值：`min(列名)`
+----
+<red>date</red> : 2014-03-21、2014-03-22
+----
