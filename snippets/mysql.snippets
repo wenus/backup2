@@ -2,6 +2,25 @@ snippet /       单行注释
 	-- ${0}
 snippet //      多行注释
 	/*${0}*/
+# 流程控制
+snippet be      BEGIN ... END
+	BEGIN
+	    ${0}
+	END;
+snippet if      IF ... THEN ... END IF
+	IF ${1} THEN
+	    ${0}
+	END IF;
+snippet elif    ELSEIF ... THEN
+	ELSEIF ${1} THEN
+	    ${0}
+snippet el      ELSE
+	ELSE
+	    ${0}
+snippet rep     REPEAT ... UNTIL ... END REPEAT
+	REPEAT
+	    ${0}
+	UNTIL ${1} END REPEAT;
 # 创建命令
 snippet crt     创建表
 	CREATE TABLE ${0};
@@ -11,11 +30,15 @@ snippet crv     创建视图
 	CREATE VIEW ${0};
 snippet crp     创建存储过程
 	CREATE PROCEDURE ${0};
+snippet crtr    创建触发器
+	CREATE TRIGGER ${0};
 snippet cru     创建用户
 	CREATE USER ${0};
 # 更新命令
 snippet alt     更新表
 	ALTER TABLE ${0};
+snippet ren     重命名表
+	RENAME TABLE ${1:old} TO ${0:new};
 snippet ins     插入记录
 	INSERT INTO ${0};
 snippet upd     更新记录
@@ -23,15 +46,31 @@ snippet upd     更新记录
 # 查询命令
 snippet sel     检索数据行
 	SELECT ${1} FROM ${0};
+snippet whe     过滤行
+	WHERE ${0}
+snippet grb     数据分组
+	GROUP BY ${0}
+snippet wir     包括NULL值组
+	WITH ROLLUP${0}
+snippet hav     过滤组
+	HAVING ${0}
 # 删除命令
 snippet del     删除表中的一行或多行记录
 	DELETE FROM ${0};
-snippet dro     永久删除数据库/用户/表/视图/索引等
-	DROP ${0};
+snippet tru     删除原表，并重建一个新的表
+	TRUNCATE TABLE ${0};
+snippet drt     删除表
+	DROP TABLE ${0};
+snippet drv     删除视图
+	DROP VIEW ${0};
+snippet drp     删除存储过程
+	DROP PROCEDURE ${0};
+snippet drtr    删除触发器
+	DROP TRIGGER ${0};
 # 事务相关
 snippet stt     开始一个新的事务
 	START TRANSACTION;${0}
-snippet com     写入事务
+snippet com     手动提交
 	COMMIT;${0}
 snippet sav     为回滚设立保留点
 	SAVEPOINT ${0};
@@ -99,6 +138,8 @@ snippet lim     限制行数
 	LIMIT ${0}
 snippet reg     正则匹配
 	REGEXP ${0}
+snippet uni     组合查询
+	UNION${0}
 snippet bin     区分大小写
 	BINARY ${0}
 # 内建函数
@@ -110,6 +151,34 @@ snippet rt      去除右边的空格
 	RTRIM(${0})
 snippet con     连接字符串
 	CONCAT(${0})
+snippet mat     指定搜索列
+	MATCH(${0})
+snippet aga     指定要使用的搜索表达式
+	AGAINST(${0})
+snippet wqe     开启扩展查询
+	WITH QUERY EXPANSION${0}
+snippet ibm     使用布尔文本搜索
+	IN BOOLEAN MODE${0}
+snippet ign     忽略错误
+	IGNORE ${0}
+snippet lop     降低优先级
+	LOW_PRIORITY${0}
+snippet ife     如果存在
+	IF EXISTS${0}
+snippet ifne    如果不存在
+	IF NOT EXISTS${0}
+snippet nul     允许空值
+	NULL${0}
+snippet non     不允许空值
+	NOT NULL${0}
+snippet def     指定默认值
+	DEFAULT ${0}
+snippet cal     调用存储过程
+	CALL ${0}
+snippet dec     声明变量
+	DECLARE ${0};
+snippet cur     游标
+	CURSOR${0}
 # 选项设置
 snippet eng     数据引擎
 	ENGINE=${0:MyISAM}

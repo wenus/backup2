@@ -8,55 +8,45 @@ snippet -       分隔注释
 snippet us      使用包
 	using ${1};${0}
 snippet na      命名空间
-	namespace ${1:na_name}
-	{
+	namespace ${1:na_name} {
 	    ${0}
 	}
 # 类、函数
 snippet cl      类定义
-	class ${1:cl_name}
-	{
+	class ${1:cl_name} {
 	    ${0}
 	}
 snippet f       方法定义
-	${1:f_name} (${2})
-	{
+	${1:f_name} (${2}) {
 	    ${0}
 	}
 snippet main    主函数
-	public static void Main (string[] args)
-	{
+	public static void Main (string[] args) {
 	    ${0}
 	}
 # 流程控制
 snippet if      if
-	if (${1})
-	{
+	if (${1}) {
 	    ${0}
 	}
 snippet elif    else if
-	else if (${1})
-	{
+	else if (${1}) {
 	    ${0}
 	}
 snippet el      else
-	else
-	{
+	else {
 	    ${0}
 	}
 snippet wh      while循环
-	while (${1})
-	{
+	while (${1}) {
 	    ${0}
 	}
 snippet fo      for循环
-	for (${1})
-	{
+	for (${1}) {
 	    ${0}
 	}
 snippet sw      switch
-	switch (${1})
-	{
+	switch (${1}) {
 	    ${0}
 	}
 snippet cs      case
@@ -67,20 +57,17 @@ snippet def     default
 	    ${0}
 # 异常处理
 snippet try     try
-	try
-	{
+	try {
 	    ${0}
 	}
 snippet thr     抛出异常
 	throw ${0}
 snippet cat     捕获异常
-	catch (${0})
-	{
+	catch (${0}) {
 	    ${0}
 	}
 snippet fin     善后处理
-	finally
-	{
+	finally {
 	    ${0}
 	}
 # 输入输出
