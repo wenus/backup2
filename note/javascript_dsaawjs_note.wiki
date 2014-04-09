@@ -1,0 +1,345 @@
+%title 《Data Structures and Algorithms with JavaScript》读书笔记
+%template code
+
+[[../index|首页]] - [[index|Note]]
+==《Data Structures and Algorithms with JavaScript》读书笔记==
+----
+===基础补遗===
+
+`JavaScript` 变量默认为全局变量，所以声明变量前，记得使用 `var`
+
+只有函数作用域，没有块级作用域，这是 `JavaScript` 与其他 `C系` 语言最显著的区别
+
+`length` 属性既可用于数组，也可用于字符串 [`PHP` 得分别使用 `count` 和 `strlen` 函数]
+
+数组、数学之类的方法，需要通过 `Array.`、`Math.` 等相应的库前缀调用，不像其他语言一样可以直接使用
+
+`JavaScript` 的灵活性可比肩 `Ruby`，只是某些部分用起来不如 `Ruby` 自然
+----
+===列表===
+
+{{{
+// 定义列表
+function List () {
+
+    this.dataStore = [];
+    this.listSize = 0;
+    this.pos = 0;
+
+    // 清空列表
+    this.clear = function () {
+        delete this.dataStore;
+        this.dataStore = [];
+        this.listSize = 0;
+        this.pos = 0;
+    };
+
+    // 返回列表的字符串表示
+    this.toString = function () {
+        return this.dataStore;
+    };
+
+    // 返回列表的长度
+    this.length = function () {
+        return this.listSize;
+    };
+
+    // 检测列表是否包含指定元素
+    this.contains = function (element) {
+        for (var i = 0; i < this.dataStore.length; i++) {
+            if (this.dataStore[i] == element) {
+                return true;
+            }
+        }
+        return false;
+    };
+
+    // 寻找指定元素
+    this.find = function (element) {
+        for (var i = 0; i < this.dataStore.length; i++) {
+            if (this.dataStore[i] == element) {
+                return i;
+            }
+        }
+        return -1;
+    };
+
+    // 在指定元素后插入新元素
+    this.insert = function (element, after) {
+        var insertPos = this.find(after);
+        if (insertPos > -1) {
+            this.dataStore.splice(insertPos+1, 0, element);
+            this.listSize++;
+            return true;
+        }
+        return false;
+    };
+
+    // 移除指定元素
+    this.remove = function (element) {
+        var foundAt = this.find(element);
+        if (foundAt > -1) {
+            this.dataStore.splice(foundAt, 1);
+            this.listSize--;
+            return true;
+        }
+        return false;
+    };
+
+    // 在列表末尾插入新元素
+    this.append = function (element) {
+        this.dataStore[this.listSize++] = element;
+    };
+
+    // 下标置列表头
+    this.front = function () {
+        this.pos = 0;
+    };
+
+    // 下标置列表尾
+    this.end = function () {
+        this.pos = this.listSize - 1;
+    };
+
+    // 下标前移一位
+    this.prev = function () {
+        if (this.pos > 0) {
+            this.pos--;
+        }
+    };
+
+    // 下标后移一位
+    this.next = function () {
+        if (this.pos < this.listSize - 1) {
+            this.pos++;
+        }
+    };
+
+    // 返回当前下标
+    this.currPos = function () {
+        return this.pos;
+    };
+
+    // 置位到指定下标
+    this.moveTo = function (position) {
+        this.pos = position;
+    };
+
+    // 返回当前下标处的元素
+    this.getElement = function () {
+        return this.dataStore[this.pos];
+    };
+
+}
+
+
+// 使用列表
+var names = new List;
+names.append('Ruchee1');
+names.append('Ruchee2');
+names.append('Ruchee3');
+
+// 迭代打印
+for (names.front(); names.currPos() < names.length()-1; names.next()) {
+    console.log(names.getElement());
+}
+// 打印最后一个元素
+console.log(names.getElement());
+}}}
+----
+===堆栈===
+
+{{{
+// 定义堆栈
+function Stack () {
+
+    this.dataStore = [];
+    this.top = 0;
+
+    // 清空堆栈
+    this.clear = function () {
+        this.top = 0;
+    };
+
+    // 返回堆栈的高度
+    this.height = function () {
+        return this.top;
+    };
+
+    // 入栈
+    this.push = function (element) {
+        this.dataStore[this.top++] = element;
+    };
+
+    // 出栈
+    this.pop = function () {
+        return this.dataStore[--this.top];
+    };
+
+    // 返回栈顶元素
+    this.peek = function () {
+        return this.dataStore[this.top-1];
+    };
+
+}
+
+
+// 使用堆栈
+var s = new Stack;
+s.push('Ruchee1');
+s.push('Ruchee2');
+s.push('Ruchee3');
+
+console.log('height: ' + s.height());
+console.log(s.peek());
+}}}
+----
+===队列===
+
+{{{
+// 定义队列
+function Queue () {
+
+    this.dataStore = [];
+
+    // 返回队列的字符串表示
+    this.toString = function () {
+        var retStr = '';
+        for (var i = 0; i < this.dataStore.length - 1; i++) {
+            retStr += this.dataStore[i] + "\n";
+        }
+        // 最后一个元素打印时不需要换行
+        retStr += this.dataStore[this.dataStore.length - 1];
+        return retStr;
+    };
+
+    // 返回队列的长度
+    this.length = function () {
+        return this.dataStore.length;
+    };
+
+    // 入队
+    this.enqueue = function (element) {
+        this.dataStore.push(element);
+    };
+
+    // 出队
+    this.dequeue = function () {
+        return this.dataStore.shift();
+    };
+
+    // 返回队首元素
+    this.front = function () {
+        return this.dataStore[0];
+    };
+
+    // 返回队尾元素
+    this.back = function () {
+        return this.dataStore[this.dataStore.length - 1];
+    };
+
+    // 检查队列是否为空
+    this.empty = function () {
+        if (this.dataStore.length === 0) {
+            return true;
+        }
+        return false;
+    };
+
+}
+
+
+// 使用队列
+var q = new Queue;
+q.enqueue('Ruchee1');
+q.enqueue('Ruchee2');
+q.enqueue('Ruchee3');
+
+console.log(q.toString());
+console.log('The first element: ' + q.front());
+console.log('The last element: ' + q.back());
+}}}
+----
+===优先队列===
+
+优先队列存储的元素结构如下：
+{{{
+function Item (name, code) {
+    this.name = name;  // 元素名
+    this.code = code;  // 优先级
+}
+}}}
+
+下面是优先队列的实现（借用了 `Node.js` 环境）
+
+`queue.js`：
+{{{
+// 导出队列模块
+module.exports = Queue;
+
+function Queue () {
+    // 上文的队列实现代码
+}
+}}}
+
+`first_queue.js`：
+{{{
+// 导入队列模块
+var Queue = require('./queue.js');
+
+
+// 定义优先队列
+function FirstQueue () {
+}
+
+// 继承队列
+FirstQueue.prototype = new Queue;
+
+// 重载出队方法
+FirstQueue.prototype.dequeue = function () {
+    var priority = this.dataStore[0].code;
+    // 取出最高优先级元素 [priority值越小，优先级越高]
+    for (var i = 1; i < this.dataStore.length; i++) {
+        if (this.dataStore[i].code < priority) {
+            priority = i;
+        }
+    }
+    return this.dataStore.splice(priority, 1);
+};
+
+// 重载输出字符串方法
+FirstQueue.prototype.toString = function () {
+    var retStr = '';
+    for (var i = 0; i < this.dataStore.length - 1; i++) {
+        retStr += this.dataStore[i].name + ' code: ' +
+            this.dataStore[i].code + "\n";
+    }
+    // 最后一个元素单独输出
+    retStr += this.dataStore[this.dataStore.length - 1].name + ' code: ' +
+        this.dataStore[this.dataStore.length - 1].code;
+    return retStr;
+};
+
+
+// 使用优先队列
+var first_queue = new FirstQueue;
+
+function Patient (name, code) {
+    this.name = name;
+    this.code = code;
+}
+
+first_queue.enqueue(new Patient('Ruchee1', 3));
+first_queue.enqueue(new Patient('Ruchee2', 3));
+first_queue.enqueue(new Patient('Ruchee3', 2));
+first_queue.enqueue(new Patient('Ruchee4', 2));
+first_queue.enqueue(new Patient('Ruchee5', 1));
+
+console.log(first_queue.toString());
+console.log(first_queue.dequeue());
+}}}
+----
+===链表===
+----
+<red>date</red> : 2014-04-08、2014-04-09
+----

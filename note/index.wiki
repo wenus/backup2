@@ -4,8 +4,14 @@
 ==编程笔记==
 ----
 <h2>
-* [[wxphp_hello_world|wxPHP基本使用方法]]
+* [[algorithms_qucik_sort|快排算法]]
+* [[javascript_dsaawjs_note|《Data Structures and Algorithms with JavaScript》读书笔记]]
+* [[c_function_points|C语言函数与指针]]
+* [[php_tipi_note|《深入理解PHP内核》阅读笔记]]
 * [[mysql_base_review|MySQL基础复习]]
+* [[lua_pilua3_note|《Programming in Lua 3rd Edition》读书笔记]]
+* [[ruby_windows_dev_config|Ruby在Windows下的配置]]
+* [[ruby_ubuntu_dev_config|Ruby在Ubuntu下的配置]]
 * [[laravel_primer|Laravel入门]]
 * [[codeigniter_base_dev_config|CodeIgniter基本的开发配置]]
 * [[thinkphp_base_dev_config|ThinkPHP基本的开发配置]]

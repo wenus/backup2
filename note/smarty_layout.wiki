@@ -13,7 +13,7 @@
 ===自定义Smarty===
 
 `MySmarty.php` 文件的内容：
-{{{class="brush: php"
+{{{
 <?php
 
 include __DIR__.'/libs/smarty.class.php';
@@ -36,7 +36,7 @@ class MySmarty extends Smarty {
 ===使用Smarty===
 
 `demo.php` 文件的内容：
-{{{class="brush: php"
+{{{
 <?php
 
 include __DIR__.'/MySmarty.php';
@@ -51,7 +51,7 @@ $smarty->display('demo.tpl');
 }}}
 
 `demo.tpl` 文件的内容：
-{{{class="brush: html"
+{{{
 <!DOCTYPE HTML>
 <html>
     <head>

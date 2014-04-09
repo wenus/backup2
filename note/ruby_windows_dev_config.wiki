@@ -1,4 +1,5 @@
 %title Ruby在Windows下的配置
+%template code
 
 [[../index|首页]] - [[index|Note]]
 ==Ruby在Windows下的配置==
@@ -53,7 +54,7 @@ update: --no-ri --no-rdoc
 # 新建项目，指定数据库引擎，阻止安装依赖包：`rails new demo -d=mysql --skip-bundle`
 # 切换到项目目录：`cd demo`
 # 编辑项目配置文件：`gvim Gemfile`
-# 将配置文件的第一行由 `source 'https://rubygems.org'` 改成 `source 'http://ruby.taobao.org'`
+# 将配置文件的第一行由 `source 'https://rubygems.org'` 改成 `source 'http://ruby.taobao.org'`（注意，是 `http` 而不是 `https`）
 # 使用 `thin` 服务器：在 `gem rails` 下面书写一行 `gem 'thin'`。确定无误后保存所作的修改
 # 安装项目依赖：`bundle install`
 # 启动项目：`rails s`
@@ -73,5 +74,5 @@ update: --no-ri --no-rdoc
 # 安装项目依赖：`jruby -S bundle install`
 # 启动项目：`jruby -S rails s`
 ----
-<red>date</red> : 2014-03-20
+<red>date</red> : 2014-03-20、2014-04-09
 ----

@@ -9,7 +9,7 @@
 下载 `Smarty` 类库，将其放置到 `application/libraries/libs` 路径
 
 在 `application/libraries` 目录下新建文件 `MySmarty.php`，内容如下：
-{{{class="brush: php"
+{{{
 <?php
 
 include_once __DIR__.'/libs/Smarty.class.php';
@@ -32,7 +32,7 @@ class MySmarty extends Smarty {
 ===修改默认控制器开启性能分析===
 
 在 `application/core` 目录下新建文件 `MY_Controller.php`，内容如下：
-{{{class="brush: php"
+{{{
 <?php
 
 class MY_Controller extends CI_Controller {
@@ -53,7 +53,7 @@ class MY_Controller extends CI_Controller {
 ----
 ===.htaccess===
 
-{{{class="brush: other"
+{{{
 <IfModule mod_rewrite.c>
     RewriteEngine on
     RewriteCond %{REQUEST_FILENAME} !-d
@@ -67,7 +67,7 @@ class MY_Controller extends CI_Controller {
 在 `application/views` 下创建两文件夹：`templates`、`templates_c`
 
 在 `application/controllers` 目录下新建控制器文件 `hello.php`，内容如下：
-{{{class="brush: php"
+{{{
 <?php
 
 class Hello extends MY_Controller {
@@ -84,7 +84,7 @@ class Hello extends MY_Controller {
 }}}
 
 在 `application/views/templates` 目录下新建视图文件 `hello.tpl`，内容如下：
-{{{class="brush: html"
+{{{
 <!DOCTYPE HTML>
 <html>
     <head>

@@ -6,7 +6,7 @@
 ----
 ===入口文件===
 
-{{{class="brush: php"
+{{{
 <?php
 
 define('APP_PATH', __DIR__.'/app/');  // 定义项目路径
@@ -18,7 +18,7 @@ include __DIR__.'/ThinkPHP/ThinkPHP.php';
 ----
 ===配置文件===
 
-{{{class="brush: php"
+{{{
 <?php
 
 return array(
@@ -29,14 +29,14 @@ return array(
     'TMPL_DETECT_THEME'    => true,             // 开启模版主题自动侦测
     'THEME_LIST'           => 'default,other',  // 可供使用的模版列表
     'DEFAULT_THEME'        => 'default',        // 默认的模版主题
-    'DB_DSN'               => 'mysql://用户名:密码@localhost:3306/数据库名',
+    'DB_DSN'               => 'mysqli://用户名:密码@localhost:3306/数据库名',
     'DB_PREFIX'            => 'tp_',            // 数据库表前缀
 );
 }}}
 ----
 ===.htaccess===
 
-{{{class="brush: other"
+{{{
 <IfModule mod_rewrite.c>
     RewriteEngine on
     RewriteCond %{REQUEST_FILENAME} !-d
@@ -45,5 +45,5 @@ return array(
 </IfModule>
 }}}
 ----
-<red>date</red> : 2014-02-11、2014-02-12
+<red>date</red> : 2014-02-11、2014-02-12、2014-03-26
 ----
