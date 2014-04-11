@@ -4,6 +4,7 @@
 ==编程笔记==
 ----
 <h2>
+* [[php_array_func_review|PHP数组函数复习]]
 * [[algorithms_qucik_sort|快排算法]]
 * [[javascript_dsaawjs_note|《Data Structures and Algorithms with JavaScript》读书笔记]]
 * [[c_function_points|C语言函数与指针]]
