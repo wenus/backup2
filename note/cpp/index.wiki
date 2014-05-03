@@ -1,0 +1,9 @@
+%title C++
+
+[[../../index|首页]] - [[../index|Note]]
+==C++==
+----
+<h2>
+* [[c_function_points|C语言函数与指针]]
+</h2>
+----

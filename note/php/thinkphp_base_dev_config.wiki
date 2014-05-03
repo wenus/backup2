@@ -1,0 +1,42 @@
+%title ThinkPHP基本的开发配置
+%template code
+
+[[../../index|首页]] - [[../index|Note]] - [[index|PHP]]
+==ThinkPHP基本的开发配置==
+----
+===入口文件===
+
+{{{
+<?php
+
+// 将PHP最低版本号提升到5.4，以使用短数组定义语法，如 $arr = [1, 2, 3, 4, 5];
+if (version_compare(PHP_VERSION, '5.4.0', '<'))  die('require PHP >= 5.4.0 !');
+
+define('APP_DEBUG', TRUE);  // 开启调试模式
+define('BUILD_DIR_SECURE', FALSE);  // 关闭空index.html文件的生成
+define('APP_PATH', __DIR__.'/Application/');  // 定义项目路径
+
+// 加载框架入口文件
+require __DIR__.'/ThinkPHP/ThinkPHP.php';
+}}}
+----
+===主配置文件===
+
+{{{
+<?php
+
+return [
+    'SHOW_PAGE_TRACE'      => APP_DEBUG ? TRUE : FALSE, // 是否开启页面Trace
+    'TMPL_TEMPLATE_SUFFIX' => '.tpl',                   // 自定义模版文件后缀
+    'TMPL_L_DELIM'         => '<{',                     // 自定义模版左定界符
+    'TMPL_R_DELIM'         => '}>',                     // 自定义模版右定界符
+    'TMPL_DETECT_THEME'    => TRUE,                     // 开启模版主题自动侦测
+    'THEME_LIST'           => 'default,other',          // 可供使用的模版列表
+    'DEFAULT_THEME'        => 'default',                // 默认的模版主题
+    'DB_DSN'               => 'mysqli://root:root@localhost:3306/tp_site',
+    'DB_PREFIX'            => 'tp_',                    // 数据库表前缀
+];
+}}}
+----
+<red>date</red> : 2014-02-11、2014-02-12、2014-03-26、2014-04-24
+----

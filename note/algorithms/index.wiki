@@ -1,0 +1,10 @@
+%title Algorithms
+
+[[../../index|首页]] - [[../index|Note]]
+==Algorithms==
+----
+<h2>
+* [[algorithms_qucik_sort|快排算法]]
+* [[javascript_dsaawjs_note|《Data Structures and Algorithms with JavaScript》读书笔记]]
+</h2>
+----

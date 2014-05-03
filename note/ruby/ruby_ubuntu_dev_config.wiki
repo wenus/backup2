@@ -1,0 +1,66 @@
+%title Ruby在Ubuntu下的配置
+%template code
+
+[[../../index|首页]] - [[../index|Note]] - [[index|Ruby]]
+==Ruby在Ubuntu下的配置==
+----
+===第一步 安装基础工具===
+
+# `sudo apt-get install git curl`
+----
+===第二步 安装RVM===
+
+# `bash < <(curl -s https://raw.github.com/wayneeseguin/rvm/master/binscripts/rvm-installer)`
+# `source ~/.bashrc && source ~/.bash_profile`：重新加载配置文件（或者关闭终端重开也行）
+# `sudo rvm requirements`：自动安装 `RVM` 所需的依赖包
+----
+===第三步 安装Ruby===
+
+# `rvm install 2.1`：安装指定版本的 `Ruby`
+# `rvm use 2.1 --default`：使用刚刚安装的 `Ruby` 版本，加上参数 `--default` 以将其作为默认的 `Ruby` 版本
+----
+===第四步 更换镜像===
+
+# `touch ~/.gemrc`：创建一个 `.gemrc` 文件
+# 使用任意文本编辑器打开该文件，然后写入以下内容：
+{{{
+---
+:backtrace: false
+:benchmark: false
+:bulk_threshold: 1000
+:sources:
+- http://ruby.taobao.org/
+:update_sources: true
+:verbose: true
+install: --no-ri --no-rdoc
+update: --no-ri --no-rdoc
+}}}
+----
+===第五步 安装Rails===
+
+# `gem install rails`：安装最新的 `Rails`（也可使用 `-v` 指定要安装的版本）
+----
+===第六步 安装Node.js===
+
+# `curl https://raw.github.com/creationix/nvm/master/install.sh | sh`：安装 `NVM`，这是一个和 `RVM` 类似的 `Node` 环境管理器
+# `source ~/.bashrc && source ~/.bash_profile`：重新加载配置文件（或者关闭终端重开也行）
+# 访问 `http://nodejs.org/` 查知最新的 `Node.js` 版本（当前最新为 `v0.10.26`）
+# `nvm install 0.10.26`：安装指定版本的 `Node.js`
+# `nvm use 0.10.26`：使用该版本
+# `nvm alias default 0.10.26`：将该版本设为默认版本（你应该已经发现了，`NVM` 和 `RVM` 如此地相似）
+----
+===第七步 新建项目进行测试===
+
+# `rails new demo --skip-bundle`：新建测试项目
+# `cd demo`
+# 打开 `demo` 目录下的 `Gemfile` 文件，将第一行的网址换成 `http://ruby.taobao.org/` （注意，是 `http` 而不是 `https`）
+# `bundle install`：安装依赖
+# `rails s`：启动服务器
+# 使用浏览器打开`http://127.0.0.1:3000`即可浏览项目默认首页
+----
+===后记===
+
+`RVM`很好地解决了`Ruby`多版本共存问题，如果系统已经存在使用其他途径安装的`Ruby`，建议先将其卸载，然后使用`RVM`进行安装
+----
+<red>date</red> : 2012-03-08、2012-03-19、2012-03-21、2012-05-01、2012-10-05、2013-02-27、2013-06-20、2014-04-09
+----

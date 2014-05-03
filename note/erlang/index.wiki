@@ -1,0 +1,4 @@
+%title Erlang
+
+[[../../index|首页]] - [[../index|Note]]
+==Erlang==

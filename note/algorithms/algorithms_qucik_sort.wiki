@@ -1,0 +1,170 @@
+%title 快排算法
+%template code
+
+[[../../index|首页]] - [[../index|Note]] - [[index|Algorithms]]
+==快排算法==
+----
+===实现思路===
+
+一对人有高有矮，随机站队
+
+现在叫队列最右边的人站出来，命名为 `A`，然后剩下的人中，凡是比 `A` 矮的人全部站到 `A` 的左边，凡是比 `A` 高的人全部站到 `A` 的右边
+
+然后 `A` 左边的那些人单独重复上一步骤，`A` 右边的人也单独重复上一步骤，`A` 不需要再管
+
+如此反复，直到所有的人都 `不需要再管`，这样该队列就是按从矮到高排列了
+----
+===PHP===
+
+{{{
+// 快排
+function quick_sort ($arr) {
+    $item = array_pop($arr);
+    if ($item) {
+        $leftArray  = array();
+        $rightArray = array();
+
+        foreach ($arr as $val) {
+            if ($val <= $item) {
+                array_push($leftArray, $val);
+            } else {
+                array_push($rightArray, $val);
+            }
+        }
+
+        return array_merge(quick_sort($leftArray), array($item), quick_sort($rightArray));
+    } else {
+        return array();
+    }
+}
+
+
+// 打印数组
+function print_arr ($arr) {
+    echo '[';
+    for ($i = 0; $i < count($arr) - 1; $i++) {
+        echo $arr[$i].' ';
+    }
+    echo $arr[count($arr) - 1];
+    echo ']';
+}
+
+
+// 生成随机数组
+$arr = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+shuffle($arr);
+
+
+// 测试
+print_arr($arr);
+echo "\n";
+print_arr(quick_sort($arr));
+echo "\n";
+}}}
+----
+===Ruby===
+
+{{{
+# 快排
+def quick_sort (arr)
+  item = arr.pop
+  if item
+    quick_sort(arr.select { |i| i <= item }) + [item] + quick_sort(arr.select { |i| i > item });
+  else
+    []
+  end
+end
+
+
+# 生成随机数组
+x = (1..10).to_a.shuffle
+
+
+# 测试
+p x
+p quick_sort x
+}}}
+----
+===CoffeeScript===
+
+{{{
+# 快排
+quick_sort = (arr) ->
+  item = arr.pop()
+  if item
+    leftArray  = []
+    rightArray = []
+
+    for val in arr
+      if val <= item
+        leftArray.push val
+      else
+        rightArray.push val
+
+    quick_sort(leftArray).concat([item], quick_sort(rightArray))
+  else []
+
+
+# 随机数组函数
+rand_array = (arr, num) ->
+  arr.sort ->
+    Math.random() - 0.5
+  arr.slice 0, num
+
+
+# 生成随机数组
+arr = [1..10]
+arr = rand_array arr, arr.length
+
+
+# 测试
+console.log arr
+console.log quick_sort(arr)
+}}}
+----
+===JavaScript===
+
+{{{
+// 快排
+function quick_sort (arr) {
+    var item = arr.pop();
+    if (item) {
+        var leftArray  = [];
+        var rightArray = [];
+
+        for (var i = 0; i < arr.length; i++) {
+            if (arr[i] <= item) {
+                leftArray.push(arr[i]);
+            } else {
+                rightArray.push(arr[i]);
+            }
+        }
+
+        return quick_sort(leftArray).concat([item], quick_sort(rightArray));
+    } else {
+        return [];
+    }
+}
+
+
+// 随机数组函数
+function rand_array(arr, num) {
+    arr.sort(function () {
+        return Math.random() - 0.5;
+    });
+    return arr.slice(0, num);
+}
+
+
+// 生成随机数组
+var arr = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+arr = rand_array(arr, arr.length);
+
+
+// 测试
+console.log(arr);
+console.log(quick_sort(arr));
+}}}
+----
+<red>date</red> : 2014-04-09
+----

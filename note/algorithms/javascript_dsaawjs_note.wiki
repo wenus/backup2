@@ -1,0 +1,905 @@
+%title 《Data Structures and Algorithms with JavaScript》读书笔记
+%template code
+
+[[../../index|首页]] - [[../index|Note]] - [[index|Algorithms]]
+==《Data Structures and Algorithms with JavaScript》读书笔记==
+----
+===基础补遗===
+
+`JavaScript` 变量默认为全局变量，所以声明变量前，记得使用 `var`
+
+只有函数作用域，没有块级作用域，这是 `JavaScript` 与其他 `C系` 语言最显著的区别
+
+`length` 属性既可用于数组，也可用于字符串 [`PHP` 得分别使用 `count` 和 `strlen` 函数]
+
+数组、数学之类的方法，需要通过 `Array.`、`Math.` 等相应的库前缀调用，不像其他语言一样可以直接使用
+
+`JavaScript` 的灵活性可比肩 `Ruby`，只是某些部分用起来不如 `Ruby` 自然
+
+另外还有最重要的一点是，`JavaScript` 的函数不支持默认参数，如果想把 `JavaScript` 用得更方便，`CoffeeScript` 是极好的选择
+----
+===列表===
+
+{{{
+// 定义列表
+function List () {
+
+    this.dataStore = [];
+    this.listSize = 0;
+    this.pos = 0;
+
+    // 清空列表
+    this.clear = function () {
+        delete this.dataStore;
+        this.dataStore = [];
+        this.listSize = 0;
+        this.pos = 0;
+    };
+
+    // 返回列表的字符串表示
+    this.toString = function () {
+        return this.dataStore;
+    };
+
+    // 返回列表的长度
+    this.length = function () {
+        return this.listSize;
+    };
+
+    // 检测列表是否包含指定元素
+    this.contains = function (element) {
+        for (var i = 0; i < this.dataStore.length; i++) {
+            if (this.dataStore[i] === element) {
+                return true;
+            }
+        }
+        return false;
+    };
+
+    // 寻找指定元素
+    this.find = function (element) {
+        for (var i = 0; i < this.dataStore.length; i++) {
+            if (this.dataStore[i] === element) {
+                return i;
+            }
+        }
+        return -1;
+    };
+
+    // 在指定元素后插入新元素
+    this.insert = function (element, after) {
+        var insertPos = this.find(after);
+        if (insertPos > -1) {
+            this.dataStore.splice(insertPos+1, 0, element);
+            this.listSize++;
+            return true;
+        }
+        return false;
+    };
+
+    // 移除指定元素
+    this.remove = function (element) {
+        var foundAt = this.find(element);
+        if (foundAt > -1) {
+            this.dataStore.splice(foundAt, 1);
+            this.listSize--;
+            return true;
+        }
+        return false;
+    };
+
+    // 在列表末尾插入新元素
+    this.append = function (element) {
+        this.dataStore[this.listSize++] = element;
+    };
+
+    // 下标置列表头
+    this.front = function () {
+        this.pos = 0;
+    };
+
+    // 下标置列表尾
+    this.end = function () {
+        this.pos = this.listSize - 1;
+    };
+
+    // 下标前移一位
+    this.prev = function () {
+        if (this.pos > 0) {
+            this.pos--;
+        }
+    };
+
+    // 下标后移一位
+    this.next = function () {
+        if (this.pos < this.listSize - 1) {
+            this.pos++;
+        }
+    };
+
+    // 返回当前下标
+    this.currPos = function () {
+        return this.pos;
+    };
+
+    // 置位到指定下标
+    this.moveTo = function (position) {
+        this.pos = position;
+    };
+
+    // 返回当前下标处的元素
+    this.getElement = function () {
+        return this.dataStore[this.pos];
+    };
+
+}
+
+
+// 使用列表
+var names = new List;
+names.append('Ruchee1');
+names.append('Ruchee2');
+names.append('Ruchee3');
+
+// 迭代打印
+for (names.front(); names.currPos() < names.length()-1; names.next()) {
+    console.log(names.getElement());
+}
+// 打印最后一个元素
+console.log(names.getElement());
+}}}
+----
+===堆栈===
+
+{{{
+// 定义堆栈
+function Stack () {
+
+    this.dataStore = [];
+    this.top = 0;
+
+    // 清空堆栈
+    this.clear = function () {
+        this.top = 0;
+    };
+
+    // 返回堆栈的高度
+    this.height = function () {
+        return this.top;
+    };
+
+    // 入栈
+    this.push = function (element) {
+        this.dataStore[this.top++] = element;
+    };
+
+    // 出栈
+    this.pop = function () {
+        return this.dataStore[--this.top];
+    };
+
+    // 返回栈顶元素
+    this.peek = function () {
+        return this.dataStore[this.top-1];
+    };
+
+}
+
+
+// 使用堆栈
+var s = new Stack;
+s.push('Ruchee1');
+s.push('Ruchee2');
+s.push('Ruchee3');
+
+console.log('height: ' + s.height());
+console.log(s.peek());
+}}}
+----
+===队列===
+
+{{{
+// 定义队列
+function Queue () {
+
+    this.dataStore = [];
+
+    // 返回队列的字符串表示
+    this.toString = function () {
+        var retStr = '';
+        for (var i = 0; i < this.dataStore.length - 1; i++) {
+            retStr += this.dataStore[i] + "\n";
+        }
+        // 最后一个元素打印时不需要换行
+        retStr += this.dataStore[this.dataStore.length - 1];
+        return retStr;
+    };
+
+    // 返回队列的长度
+    this.length = function () {
+        return this.dataStore.length;
+    };
+
+    // 入队
+    this.enqueue = function (element) {
+        this.dataStore.push(element);
+    };
+
+    // 出队
+    this.dequeue = function () {
+        return this.dataStore.shift();
+    };
+
+    // 返回队首元素
+    this.front = function () {
+        return this.dataStore[0];
+    };
+
+    // 返回队尾元素
+    this.back = function () {
+        return this.dataStore[this.dataStore.length - 1];
+    };
+
+    // 检查队列是否为空
+    this.empty = function () {
+        if (this.dataStore.length === 0) {
+            return true;
+        }
+        return false;
+    };
+
+}
+
+
+// 使用队列
+var q = new Queue;
+q.enqueue('Ruchee1');
+q.enqueue('Ruchee2');
+q.enqueue('Ruchee3');
+
+console.log(q.toString());
+console.log('The first element: ' + q.front());
+console.log('The last element: ' + q.back());
+}}}
+----
+===优先队列===
+
+优先队列存储的元素结构如下：
+{{{
+function Item (name, code) {
+    this.name = name;  // 元素名
+    this.code = code;  // 优先级
+}
+}}}
+
+下面是优先队列的实现（借用了 `Node.js` 环境）
+
+`queue.js`：
+{{{
+// 导出队列模块
+module.exports = Queue;
+
+function Queue () {
+    // 上文的队列实现代码
+}
+}}}
+
+`first_queue.js`：
+{{{
+// 导入队列模块
+var Queue = require('./queue.js');
+
+
+// 定义优先队列
+function FirstQueue () {
+}
+
+// 继承队列
+FirstQueue.prototype = new Queue;
+
+// 重载出队方法
+FirstQueue.prototype.dequeue = function () {
+    var priority = this.dataStore[0].code;
+    // 取出最高优先级元素 [priority值越小，优先级越高]
+    for (var i = 1; i < this.dataStore.length; i++) {
+        if (this.dataStore[i].code < priority) {
+            priority = i;
+        }
+    }
+    return this.dataStore.splice(priority, 1);
+};
+
+// 重载输出字符串方法
+FirstQueue.prototype.toString = function () {
+    var retStr = '';
+    for (var i = 0; i < this.dataStore.length - 1; i++) {
+        retStr += this.dataStore[i].name + ' code: ' +
+            this.dataStore[i].code + "\n";
+    }
+    // 最后一个元素单独输出
+    retStr += this.dataStore[this.dataStore.length - 1].name + ' code: ' +
+        this.dataStore[this.dataStore.length - 1].code;
+    return retStr;
+};
+
+
+// 使用优先队列
+var first_queue = new FirstQueue;
+
+function Patient (name, code) {
+    this.name = name;
+    this.code = code;
+}
+
+first_queue.enqueue(new Patient('Ruchee1', 3));
+first_queue.enqueue(new Patient('Ruchee2', 3));
+first_queue.enqueue(new Patient('Ruchee3', 2));
+first_queue.enqueue(new Patient('Ruchee4', 2));
+first_queue.enqueue(new Patient('Ruchee5', 1));
+
+console.log(first_queue.toString());
+console.log(first_queue.dequeue());
+}}}
+----
+===单链表===
+
+{{{
+// 定义节点
+function Node (element) {
+    this.element = element;
+    this.next = null;
+}
+
+
+// 定义单链表
+function LinkedList () {
+
+    // 保存头节点
+    this.head = new Node('head');
+
+    // 打印链表
+    this.display = function () {
+        var currNode = this.head;
+        while (currNode.next !== null) {
+            console.log(currNode.next.element);
+            currNode = currNode.next;
+        }
+    };
+
+    // 查找节点
+    this.find = function (item) {
+        var currNode = this.head;
+        while (currNode.element !== item) {
+            currNode = currNode.next;
+        }
+        return currNode;
+    };
+
+    // 查找前一个节点
+    this.findPrevious = function (item) {
+        var currNode = this.head;
+        while (currNode.next !== null && currNode.next.element !== item) {
+            currNode = currNode.next;
+        }
+        return currNode;
+    };
+
+    // 插入节点
+    this.insert = function (newElement, item) {
+        var newNode = new Node(newElement);
+        var current = this.find(item);
+        newNode.next = current.next;
+        current.next = newNode;
+    };
+
+    // 移除节点
+    this.remove = function (item) {
+        var prevNode = this.findPrevious(item);
+        if (prevNode.next !== null) {
+            prevNode.next = prevNode.next.next;
+        }
+    };
+
+}
+
+
+// 使用单链表
+var cities = new LinkedList;
+
+cities.insert('Ruchee1', 'head');
+cities.insert('Ruchee2', 'Ruchee1');
+cities.insert('Ruchee3', 'Ruchee2');
+cities.display();
+
+cities.remove('Ruchee2');
+console.log();
+cities.display();
+}}}
+----
+===双链表===
+
+{{{
+// 定义节点
+function Node (element) {
+    this.element = element;
+    this.next = null;
+    this.previous = null;
+}
+
+
+// 定义双链表
+function DoubleLinkedList () {
+
+    // 保存头节点
+    this.head = new Node('head');
+
+    // 打印链表
+    this.display = function () {
+        var currNode = this.head;
+        while (currNode.next !== null) {
+            console.log(currNode.next.element);
+            currNode = currNode.next;
+        }
+    };
+
+    // 反向打印
+    this.displayReverse = function () {
+        var currNode = this.findLast();
+        while (currNode.previous !== null) {
+            console.log(currNode.element);
+            currNode = currNode.previous;
+        }
+    };
+
+    // 查找节点
+    this.find = function (item) {
+        var currNode = this.head;
+        while (currNode.element !== item) {
+            currNode = currNode.next;
+        }
+        return currNode;
+    };
+
+    // 查找最后一个节点
+    this.findLast = function () {
+        var currNode = this.head;
+        while (currNode.next !== null) {
+            currNode = currNode.next;
+        }
+        return currNode;
+    };
+
+    // 插入节点
+    this.insert = function (newElement, item) {
+        var newNode = new Node(newElement);
+        var current = this.find(item);
+        newNode.next = current.next;
+        newNode.previous = current;
+        current.next = newNode;
+    };
+
+    // 移除节点
+    this.remove = function (item) {
+        var currNode = this.find(item);
+        if (currNode.next !== null) {  // 待删节点后面有节点
+            currNode.next.previous = currNode.previous;
+            currNode.previous.next = currNode.next;
+        } else {  // 待删节点后面无节点
+            currNode.previous.next = null;
+        }
+        currNode.next = null;
+        currNode.previous = null;
+    };
+
+}
+
+
+// 使用双链表
+var list = new DoubleLinkedList;
+list.insert('Ruchee1', 'head');
+list.insert('Ruchee2', 'Ruchee1');
+list.insert('Ruchee3', 'Ruchee2');
+
+list.display();
+console.log();
+list.displayReverse();
+}}}
+----
+===循环单链表===
+
+{{{
+function CircleLinkedList () {
+
+    this.head = new Node('head');
+    this.head.next = this.head;
+
+    // 其他链表方法
+
+}
+}}}
+----
+===循环双链表===
+
+{{{
+function CircleDoubleLinkedList () {
+
+    this.head = new Node('head');
+    this.head.next = this.head;
+    this.head.previous = this.head;
+
+    // 其他链表方法
+
+}
+}}}
+----
+===字典===
+
+像 `JavaScript`、`PHP`、`Python`、`Ruby` 等脚本语言，一般都直接内置了字典或类似字典的数据结构，如 `PHP` 的数组其实就是一个字典，所以字典结构一般都没自己构造的必要
+
+{{{
+// 定义字典
+function Dict () {
+
+    this.dataStore = new Array();
+
+    // 新增元素
+    this.add = function (key, value) {
+        this.dataStore[key] = value;
+    };
+
+    // 打印所有元素
+    this.showAll = function () {
+        for (var key in this.dataStore) {
+            console.log(key + ' -> ' + this.dataStore[key]);
+        }
+    };
+
+    // 清空字典
+    this.clear = function () {
+        for (var key in this.dataStore) {
+            delete this.dataStore[key];
+        }
+    };
+
+    // 统计元素个数
+    this.count = function () {
+        var n = 0;
+        for (var key in this.dataStore) {
+            n++;
+        }
+        return n;
+    };
+
+    // 查找元素
+    this.find = function (key) {
+        return this.dataStore[key];
+    };
+
+    // 删除元素
+    this.remove = function (key) {
+        delete this.dataStore[key];
+    };
+
+}
+
+
+// 使用字典
+var dict = new Dict;
+dict.add('a', 'Ruchee1');
+dict.add('b', 'Ruchee2');
+dict.add('c', 'Ruchee3');
+
+console.log(dict.count());
+dict.showAll();
+}}}
+----
+===哈希===
+
+{{{
+// 定义哈希
+function Hash (size) {
+
+    // 设置哈希大小
+    if (size) {
+        this.hash = new Array(size);
+    } else {
+        this.hash = new Array(100);
+    }
+
+    // 打印哈希
+    this.showDistro = function () {
+        for (var i = 0; i < this.hash.length; i++) {
+            if (this.hash[i] !== undefined) {
+                console.log(i + ': ' + this.hash[i]);
+            }
+        }
+    };
+
+    // 计算下标
+    this.makeHash = function (data) {
+        const H = 37;  // 一个可自定义的常量
+        var total = 0;
+        for (var i = 0; i < data.length; i++) {
+            total += H*total + data.charCodeAt(i);
+        }
+        total %= this.hash.length;
+        if (total < 0) {
+            total += this.hash.length - 1;
+        }
+        return parseInt(total);
+    };
+
+    // 查找元素
+    this.get = function (key) {
+        return this.hash[this.makeHash(key)];
+    };
+
+    // 新增元素
+    this.put = function (data) {
+        var pos = this.makeHash(data);
+        this.hash[pos] = data;
+    };
+
+}
+
+
+// 使用哈希
+var hash = new Hash(10);
+hash.put('Ruchee1');
+hash.put('Ruchee2');
+hash.put('Ruchee3');
+
+hash.showDistro();
+}}}
+----
+===集合===
+
+{{{
+// 定义集合
+function Set () {
+
+    this.dataStore = [];
+
+    // 返回整个集合
+    this.show = function () {
+        return this.dataStore;
+    };
+
+    // 返回集合的大小
+    this.size = function () {
+        return this.dataStore.length;
+    };
+
+    // 根据下标获取成员
+    this.get = function (pos) {
+        return this.dataStore[pos];
+    };
+
+    // 新增成员
+    this.add = function (data) {
+        if (this.dataStore.indexOf(data) < 0) {
+            this.dataStore.push(data);
+            return true;
+        }
+        return false;
+    };
+
+    // 移除成员
+    this.remove = function (data) {
+        var pos = this.dataStore.indexOf(data);
+        if (pos > -1) {
+            this.dataStore.splice(pos, 1);
+            return true;
+        }
+        return false;
+    };
+
+    // 检测是否包含指定成员
+    this.contains = function (data) {
+        if (this.dataStore.indexOf(data) > -1) {
+            return true;
+        }
+        return false;
+    };
+
+    // 集合交集
+    this.intersect = function (set) {
+        var tempSet = new Set;
+        for (var i = 0; i < this.size(); i++) {
+            if (this.contains(set.get(i))) {
+                tempSet.add(set.get(i));
+            }
+        }
+        return tempSet;
+    };
+
+    // 集合并集
+    this.union = function (set) {
+        var tempSet = new Set;
+        for (var i = 0; i < this.size(); i++) {
+            tempSet.add(this.get(i));
+        }
+        for (var i = 0; i < set.size(); i++) {
+            if (!tempSet.contains(set.get(i))) {
+                tempSet.add(set.get(i));
+            }
+        }
+        return tempSet;
+    };
+
+    // 集合补集
+    this.difference = function (set) {
+        var tempSet = new Set;
+        for (var i = 0; i < this.size(); i++) {
+            if (!set.contains(this.get(i))) {
+                tempSet.add(this.get(i));
+            }
+        }
+        return tempSet;
+    };
+
+    // 本集合是否是参数集合的子集
+    this.subset = function (set) {
+        if (this.size() > set.size()) {
+            return false;
+        }
+        for (var i = 0; i < this.size(); i++) {
+            if (!set.contains(this.get(i))) {
+                return false;
+            }
+        }
+        return true;
+    };
+
+}
+
+
+// 使用集合
+var set1 = new Set;
+set1.add('Ruchee1');
+set1.add('Ruchee2');
+set1.add('Ruchee3');
+
+var set2 = new Set;
+set2.add('Ruchee1');
+set2.add('Ruchee4');
+set2.add('Ruchee5');
+
+var set3 = new Set;
+set3.add('Ruchee1');
+set3.add('Ruchee2');
+set3.add('Ruchee3');
+
+console.log(set1.intersect(set2).show());
+console.log(set1.union(set2).show());
+console.log(set1.subset(set2));
+console.log(set1.subset(set3));
+console.log(set1.difference(set2).show());
+}}}
+----
+===二叉树===
+
+{{{
+// 定义节点
+function Node (data, left, right) {
+    this.data  = data;
+    this.left  = left;
+    this.right = right;
+
+    // 返回节点存储的数据
+    this.show = function () {
+        return this.data;
+    };
+}
+
+
+// 定义二叉搜索树
+function BST () {
+
+    this.root = null;
+
+    // 插入节点 [小左大右]
+    this.insert = function (data) {
+        var n = new Node(data, null, null);
+        if (this.root === null) {
+            this.root = n;
+        } else {
+            var current = this.root;
+            var parent;
+            while (true) {
+                parent = current;
+                if (data < current.data) {
+                    current = current.left;
+                    if (current === null) {
+                        parent.left = n;
+                        break;
+                    }
+                } else {
+                    current = current.right;
+                    if (current === null) {
+                        parent.right = n;
+                        break;
+                    }
+                }
+            }
+        }
+    };
+
+    // 先序遍历
+    this.preOrder = function (node) {
+        if (node !== null) {
+            console.log(node.show() + ' ');
+            this.preOrder(node.left);
+            this.preOrder(node.right);
+        }
+    };
+
+    // 中序遍历
+    this.inOrder = function (node) {
+        if (node !== null) {
+            this.inOrder(node.left);
+            console.log(node.show() + ' ');
+            this.inOrder(node.right);
+        }
+    };
+
+    // 后序遍历
+    this.postOrder = function (node) {
+        if (node !== null) {
+            this.postOrder(node.left);
+            this.postOrder(node.right);
+            console.log(node.show() + ' ');
+        }
+    };
+
+    // 寻找最小值
+    this.getMin = function () {
+        var current = this.root;
+        while (current.left !== null) {
+            current = current.left;
+        }
+        return current.data;
+    };
+
+    // 寻找最大值
+    this.getMax = function () {
+        var current = this.root;
+        while (current.right !== null) {
+            current = current.right;
+        }
+        return current.data;
+    };
+
+    // 寻找指定值
+    this.find = function (data) {
+        var current = this.root;
+        while (current.data !== data) {
+            if (data < current.data) {
+                current = current.left;
+            } else {
+                current = current.right;
+            }
+            if (current === null) {
+                return null;
+            }
+        }
+        return current;
+    };
+
+}
+
+
+// 使用二叉搜索树
+var bst = new BST;
+bst.insert(10);
+bst.insert(8);
+bst.insert(11);
+bst.insert(9);
+
+console.log(bst.getMin());
+console.log(bst.getMax());
+console.log(bst.find(9));
+}}}
+----
+<red>date</red> : 2014-04-08、2014-04-09、2014-04-10、2014-04-11、2014-04-14、2014-04-15
+----

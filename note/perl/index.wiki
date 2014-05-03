@@ -1,0 +1,9 @@
+%title Perl
+
+[[../../index|首页]] - [[../index|Note]]
+==Perl==
+----
+<h2>
+* [[perl_diff_to_php|Perl相比PHP的不同之处]]
+</h2>
+----
