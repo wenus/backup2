@@ -2,3 +2,8 @@
 
 [[../../index|首页]] - [[../index|Note]]
 ==Tools==
+----
+<h2>
+* [[ubuntu_gnome_terminal_font|Ubuntu下设置Gnome-Terminal字体]]
+</h2>
+----
