@@ -1,0 +1,67 @@
+%title PHP浏览器端辅助工具的配置
+%template code
+
+[[../../index|首页]] - [[../index|Note]] - [[index|PHP]]
+==PHP浏览器端辅助工具的配置==
+----
+===PHP Ninja Manual===
+
+`PHP Ninja Manual` 是一个支持离线查询的 `PHP` 手册插件，其调用 `PHP` 最新的官方文档，支持多种语言，查询起来相当方便
+
+# 首先到 `Chrome` 扩展中心找到并安装
+# 在扩展程序管理页找到并打开它的选项
+# 选择你需要的语言，然后 `Reset Database`（重置数据库）
+# 在浏览器右上角点击它的图标，它就会初始化你刚刚的设置（其实就是下载你所选语言的 `PHP` 文档包），初始化完就可以正常使用了
+----
+===Chrome Logger===
+
+`Chrome Logger` 是一个可以将 `PHP` 调试信息显示到浏览器 `Console` 里面的插件，这样就不会对原网页的显示产生干扰
+
+# 首先到 `Chrome` 扩展中心找到并安装
+# 然后在项目 `composer.json` 里面的 `require` 段加一行：`"ccampbell/chromephp": "*"`
+# 执行 `composer update` 安装
+# 下面是一段简单的测试代码：
+{{{
+<?php
+
+require 'autoload.php';
+
+ChromePhp::log('Hello, Chrome Logger');
+ChromePhp::log($_SERVER);
+ChromePhp::warn('warning');
+ChromePhp::error('error');
+}}}
+# 在 `Chrome` 里面打开该测试代码对应的网址，点浏览器右上角的 `Chrome Logger` 工具栏图标，使其变成深蓝色
+# 刷新页面，打开浏览器 `Console`，你就发现上述调试信息都显示在里面了
+----
+===HTTP Headers===
+
+这个插件以用户友好的形式显示 `HTTP` 交互信息，直接安装即可，无需配置，它会在浏览器右上角添加一个长得像云朵的工具栏图标
+----
+===PrettyPrint===
+
+想右键查看 `JS` 和 `CSS` 源代码时有语法高亮？这款插件就是干这个的，不仅有语法高亮，还会对代码进行适当的美化
+
+直接安装，无需配置，可以在选项中开启对本地文档的支持
+----
+===Wappalyzer===
+
+想知道某个网站是用的什么开发语言、什么开发框架、什么服务器？装上这个插件一目了然，虽说有时候会误报，但大体上是精准的
+
+直接安装即可，没什么需要配置，它会在浏览器右上角添加一个黄色图标，点击即可查看当前浏览网站使用的技术栈
+----
+===其他有用的插件===
+
+* `Vimium`：用 `Vim` 的按键方式使用浏览器，爽歪歪
+* `amCoffee`：在浏览器 `Console` 中使用 `CoffeeScript`
+* `ClojureScript REPL`：在浏览器 `Console` 中使用 `ClojureScript`
+* `Quick Javascript Switcher`：一键关闭或开启当前网页的 `JS` 脚本
+* `Java API Search`：在地址栏键入 `java+空格` 进入 `Java API` 搜索模式
+* `Android SDK Search`：在地址栏键入 `ad+空格` 进入 `Android API` 搜索模式
+* `PySearch`：在地址栏键入 `py+空格` 进入 `Python API` 搜索模式
+* `RubyDoc Search`：在地址栏键入 `rdoc+空格` 进入 `ruby-doc.org` 搜索模式
+* `Ruby on Rails API Search`：在地址栏键入 `rd+空格` 进入 `Rails API` 搜索模式
+* `G Translate EX`：划词翻译
+----
+<red>date</red> : 2014-05-05、2014-05-06
+----

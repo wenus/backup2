@@ -1,0 +1,54 @@
+%title C++基础复习
+%template code
+
+[[../../index|首页]] - [[../index|Note]] - [[index|C++]]
+==C++基础复习==
+----
+===命名空间===
+
+`using namespace xxx;` 并非一定要写在代码的开头，函数里面也是可以写的，随用随 `using`
+----
+===基础语法===
+
+引用全局变量，只需在变量名最前面加两个冒号即可，如 `::g_val`
+----
+===常用技巧===
+
+判断两浮点数是否相等的方法：
+{{{
+#include <cmath>
+
+bool is_equal (float x, float y) {
+    return fabs(x-y) <= 0.0000001;
+}
+}}}
+----
+===与C的兼容性===
+
+变量声明，`C++` 支持 `int a = 10` 和 `int a(10)` 这两种形式，`C` 只支持 `int a = 10` 这一种
+
+类型转换，`C++` 可以写作 `(int)a`，也可以写作 `int(a)`，而 `C` 只支持 `(int)a`
+
+`abs` 函数在 `C` 和 `C++` 中表现不一致，`C` 中总是返回 `Int` 型，而 `C++` 中返回值视传递的参数类型而定
+
+`C++` 独有 `typeid` 函数可以用来判断变量的数据类型，这是 `C` 所没有的，使用示例如下：
+{{{
+#include <iostream>
+#include <typeinfo>
+using namespace std;
+
+int main (int argc, char *argv[]) {
+    int a = 1;
+    int b = 2;
+
+    // 判断 a 和 b 是不是同一数据类型
+    cout << (typeid(a).name() == typeid(b).name())   << endl;
+    // 判断 a 是不是 int 型
+    cout << (typeid(a).name() == typeid(int).name()) << endl;
+
+    return 0;
+}
+}}}
+----
+<red>date</red> : 2014-05-05、2014-05-06
+----

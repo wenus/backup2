@@ -4,6 +4,7 @@
 ==C++==
 ----
 <h2>
+* [[cpp_base_review|C++基础复习]]
 * [[c_function_points|C语言函数与指针]]
 </h2>
 ----

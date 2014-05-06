@@ -4,6 +4,7 @@
 ==PHP==
 ----
 <h2>
+* [[php_chrome_help_tools|PHP浏览器端辅助工具的配置]]
 * [[codeigniter_better_use|更好地使用CodeIgniter]]
 * [[laravel_controllers|Laravel控制器]]
 * [[php_array_func_review|PHP数组函数复习]]
