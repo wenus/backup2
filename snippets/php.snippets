@@ -434,4 +434,54 @@ snippet ci_pu   获取表单数据 [put方式]
 	$this->input->put('${0}');
 snippet ci_po   获取表单数据 [post方式]
 	$this->input->post('${0}');
+# Laravel框架
+snippet la_c    控制器
+	class `expand("%:r")` extends \BaseController {
+	
+	    ${0}
+	
+	}
+snippet la_ro   通用路由
+	Route::${1:get}('${2}', function (${3}) {
+	    ${0}
+	});
+snippet la_rg   GET路由
+	Route::get('${1}', function (${2}) {
+	    ${0}
+	});
+snippet la_rpo  POST路由
+	Route::post('${1}', function (${2}) {
+	    ${0}
+	});
+snippet la_rp   PUT路由
+	Route::put('${1}', function (${2}) {
+	    ${0}
+	});
+snippet la_rd   DELETE路由
+	Route::delete('${1}', function (${2}) {
+	    ${0}
+	});
+snippet la_ra   ANY路由
+	Route::any('${1}', function (${2}) {
+	    ${0}
+	});
+snippet la_rf   过滤器
+	Route::filter('${1}', function (${2}) {
+	    ${0}
+	});
+snippet la_red  路由跳转
+	Redirect::to('${0}')
+snippet la_res  自定义响应
+	Response::make(${1}, ${0})
+snippet la_json JSON响应
+	Response::json(${0})
+snippet la_down DOWNLOAD响应
+	Response::download(${0})
+# Chrome Logger 浏览器调试插件
+snippet cl_l    打印普通信息
+	ChromePhp::log(${0});
+snippet cl_w    打印警告信息
+	ChromePhp::warn(${0});
+snippet cl_e    打印错误信息
+	ChromePhp::error(${0});
 ################
