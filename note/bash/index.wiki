@@ -1,4 +1,4 @@
-%title Perl
+%title Bash
 
 [[../../index|首页]] - [[../index|Note]]
-==Perl==
+==Bash==
