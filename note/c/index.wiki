@@ -1,4 +1,4 @@
-%title Linux
+%title C语言
 
 [[../../index|首页]] - [[../index|Note]]
-==Linux==
+==C语言==

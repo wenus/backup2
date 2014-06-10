@@ -5,10 +5,16 @@
 ----
 <h2>
 <center>
+[[cpp/index|C++]]
+[[lua/index|Lua]]
 [[php/index|PHP]]
+[[node/index|Node]]
 [[web/index|Web]]
 ----
+[[csbase/index|CSBase]]
 [[algorithms/index|ALGO]]
+[[linux/index|Linux]]
+[[webserver/index|Server]]
 [[database/index|DataBase]]
 [[tools/index|Tools]]
 </center>

@@ -7,7 +7,6 @@
 * [[php_chrome_help_tools|PHP浏览器端辅助工具的配置]]
 * [[codeigniter_better_use|更好地使用CodeIgniter]]
 * [[laravel_controllers|Laravel控制器]]
-* [[php_array_func_review|PHP数组函数复习]]
 * [[php_tipi_note|《深入理解PHP内核》阅读笔记]]
 * [[laravel_primer|Laravel入门]]
 * [[codeigniter_and_smarty|CodeIgniter集成Smarty]]
