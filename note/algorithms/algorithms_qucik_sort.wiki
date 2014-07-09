@@ -51,7 +51,7 @@ function print_arr ($arr) {
 
 
 // 生成随机数组
-$arr = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+$arr = range(1, 10);
 shuffle($arr);
 
 
@@ -96,25 +96,22 @@ quick_sort = (arr) ->
     rightArray = []
 
     for val in arr
-      if val <= item
-        leftArray.push val
-      else
-        rightArray.push val
+      if val <= item then leftArray.push val else rightArray.push val
 
     quick_sort(leftArray).concat([item], quick_sort(rightArray))
   else []
 
 
 # 随机数组函数
-rand_array = (arr, num) ->
+rand_array = (arr) ->
   arr.sort ->
     Math.random() - 0.5
-  arr.slice 0, num
+  arr
 
 
 # 生成随机数组
 arr = [1..10]
-arr = rand_array arr, arr.length
+arr = rand_array arr
 
 
 # 测试
@@ -148,17 +145,17 @@ function quick_sort (arr) {
 
 
 // 随机数组函数
-function rand_array(arr, num) {
+function rand_array(arr) {
     arr.sort(function () {
         return Math.random() - 0.5;
     });
-    return arr.slice(0, num);
+    return arr;
 }
 
 
 // 生成随机数组
 var arr = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
-arr = rand_array(arr, arr.length);
+arr = rand_array(arr);
 
 
 // 测试
@@ -166,5 +163,5 @@ console.log(arr);
 console.log(quick_sort(arr));
 }}}
 ----
-<red>date</red> : 2014-04-09
+<red>date</red> : 2014-04-09、2014-06-24
 ----

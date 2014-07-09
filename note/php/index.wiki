@@ -4,6 +4,8 @@
 ==PHP==
 ----
 <h2>
+* [[php_string_reverse|不借助库函数实现字符串翻转]]
+* [[php_list_dir|PHP遍历文件和子文件夹]]
 * [[php_chrome_help_tools|PHP浏览器端辅助工具的配置]]
 * [[codeigniter_better_use|更好地使用CodeIgniter]]
 * [[laravel_controllers|Laravel控制器]]
