@@ -15,9 +15,6 @@ alias la='ls -A'                              # all but . and ..
 alias l='ls -CF'                              #
 alias cls='clear'                             # clear input
 
-alias vi='mousepad'                           # little text editor
-alias pdf='okular'                            # pdf viewer
-
 
 # For RVM
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm" # Load RVM into a shell session *as a function*
@@ -27,7 +24,4 @@ export PATH="$HOME/.rvm/bin:$PATH" # Add RVM to PATH for scripting
 [ -s $HOME/.nvm/nvm.sh ] && . $HOME/.nvm/nvm.sh # This loads NVM
 
 # Other Tools
-export PATH="$HOME/ruchee/apps/bin:$PATH"
-export PATH="$HOME/ruchee/apps/sbt/bin:$PATH"
-export PATH="$HOME/ruchee/apps/dart/bin:$PATH"
-export PATH="$HOME/ruchee/apps/elixir/bin:$PATH"
+export PATH="$HOME/apps/bin:$HOME/apps/vendor/bin:$PATH"
