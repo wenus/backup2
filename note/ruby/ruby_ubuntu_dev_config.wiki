@@ -10,7 +10,7 @@
 ----
 ===第二步 安装RVM===
 
-# `bash < <(curl -s https://raw.github.com/wayneeseguin/rvm/master/binscripts/rvm-installer)`
+# `\curl -sSL https://get.rvm.io | bash -s stable`
 # `source ~/.bashrc && source ~/.bash_profile`：重新加载配置文件（或者关闭终端重开也行）
 # `sudo rvm requirements`：自动安装 `RVM` 所需的依赖包
 ----
@@ -62,5 +62,5 @@ update: --no-ri --no-rdoc
 
 `RVM`很好地解决了`Ruby`多版本共存问题，如果系统已经存在使用其他途径安装的`Ruby`，建议先将其卸载，然后使用`RVM`进行安装
 ----
-<red>date</red> : 2012-03-08、2012-03-19、2012-03-21、2012-05-01、2012-10-05、2013-02-27、2013-06-20、2014-04-09
+<red>date</red> : 2012-03-08、2012-03-19、2012-03-21、2012-05-01、2012-10-05、2013-02-27、2013-06-20、2014-04-09、2014-07-21
 ----

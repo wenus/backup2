@@ -4,6 +4,7 @@
 ==Tools==
 ----
 <h2>
+* [[ctags_usage|ctags使用方法]]
 * [[ubuntu_gnome_terminal_font|Ubuntu下设置Gnome-Terminal字体]]
 </h2>
 ----
