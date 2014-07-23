@@ -1,0 +1,10 @@
+%title ctags使用方法
+%template code
+
+[[../../index|首页]] - [[../index|Note]] - [[index|Tools]]
+==ctags使用方法==
+----
+常用命令：`ctags -R --languages=c,c++ --langmap=c:+.h`（递归当前目录及其子目录，指定对 `C/C++` 源文件生成 `tags`，且 `C语言` 源文件应该要包含后缀为 `.h` 的文件）
+----
+<red>date</red> : 2014-07-22
+----
