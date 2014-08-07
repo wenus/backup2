@@ -1,0 +1,6 @@
+@echo off
+echo Starting PHP FastCGI...
+RunHiddenConsole php-cgi -b 127.0.0.1:9000 -c D:/Ruchee/WAMP/php/php.ini
+
+echo Starting Nginx...
+nginx -c D:/Ruchee/Nginx/conf/nginx.conf
