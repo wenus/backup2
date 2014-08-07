@@ -24,5 +24,5 @@ export PATH="$HOME/.rvm/bin:$PATH" # Add RVM to PATH for scripting
 [ -s $HOME/.nvm/nvm.sh ] && . $HOME/.nvm/nvm.sh # This loads NVM
 
 # Other Tools
-export PATH="$HOME/apps:$HOME/apps/vendor/bin:$HOME/apps/go/bin:$HOME/apps/groovy/bin:$HOME/apps/scala/bin:$HOME/apps/clojure:$PATH"
+export PATH="$HOME/apps:$HOME/apps/vendor/bin:$HOME/apps/go/bin:$PATH"
 export GOPATH="$HOME/apps/go"
