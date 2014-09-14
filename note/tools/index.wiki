@@ -4,6 +4,11 @@
 ==Tools==
 ----
 <h2>
+* [[sed_usage|sed用法]]
+* [[perl_multifile_replace|使用Perl实现多文件批量替换]]
+* [[windows_bat_simple_usage|Windows下通用bat文件的简单写法]]
+* [[ssh_upload_download_files|SSH远程上传和下载文件]]
+* [[bash_review|Bash复习笔记]]
 * [[ctags_usage|ctags使用方法]]
 * [[ubuntu_gnome_terminal_font|Ubuntu下设置Gnome-Terminal字体]]
 </h2>

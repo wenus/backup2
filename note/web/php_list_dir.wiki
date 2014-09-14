@@ -1,0 +1,61 @@
+%title PHP遍历文件和子文件夹
+%template code
+
+[[../../index|首页]] - [[../index|Note]] - [[index|Web]]
+==PHP遍历文件和子文件夹==
+----
+===方法一===
+
+用 `dir()` 获取句柄，用 `dir->read()` 遍历文件，用 `dir->close()` 关闭句柄
+
+{{{
+function list_dir ($dir_path) {
+    if (! is_dir($dir_path)) return ;
+
+    $dir = dir($dir_path);
+
+    echo "<ul>\n";
+    while ($file = $dir->read()) {
+        if (in_array($file, array('.', '..'))) continue;
+
+        if (is_dir($dir_path.'/'.$file)) {
+            echo "<strong><font color='red'>dir: </font></strong>", $file, "<hr>\n";
+            list_dir($dir_path.'/'.$file);
+        } else {
+            echo "<strong><font color='blue'>file: </font></strong>", $file, "<hr>\n";
+        }
+    }
+    echo "</ul>\n";
+
+    $dir->close();
+}
+}}}
+----
+===方法二===
+
+用 `opendir()` 获取句柄，用 `readdir()` 遍历文件，用 `closedir()` 关闭句柄
+
+{{{
+function list_dir ($dir_path) {
+    if (! is_dir($dir_path)) return ;
+    if (! ($dir = opendir($dir_path))) return ;
+
+    echo "<ul>\n";
+    while ($file = readdir($dir)) {
+        if (in_array($file, array('.', '..'))) continue;
+
+        if (is_dir($dir_path.'/'.$file)) {
+            echo "<strong><font color='red'>dir: </font></strong>", $file, "<hr>\n";
+            list_dir($dir_path.'/'.$file);
+        } else {
+            echo "<strong><font color='blue'>file: </font></strong>", $file, "<hr>\n";
+        }
+    }
+    echo "</ul>\n";
+
+    closedir($dir);
+}
+}}}
+----
+<red>date</red> : 2014-07-02
+----

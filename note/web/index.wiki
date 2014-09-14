@@ -2,3 +2,22 @@
 
 [[../../index|首页]] - [[../index|Note]]
 ==Web==
+----
+<h2>
+* [[php_traits_base|PHP Traits基础补遗]]
+* [[javascript_check_device|用JS检测访问设备]]
+* [[php_format_string_position|PHP格式化字符串中的位置标记]]
+* [[php_string_reverse|不借助库函数实现字符串翻转]]
+* [[php_list_dir|PHP遍历文件和子文件夹]]
+* [[php_chrome_help_tools|PHP浏览器端辅助工具的配置]]
+* [[codeigniter_better_use|更好地使用CodeIgniter]]
+* [[laravel_controllers|Laravel控制器]]
+* [[php_tipi_note|《深入理解PHP内核》阅读笔记]]
+* [[laravel_primer|Laravel入门]]
+* [[codeigniter_and_smarty|CodeIgniter集成Smarty]]
+* [[thinkphp_base_dev_config|ThinkPHP基本的开发配置]]
+* [[smarty_layout|Smarty的布局和使用]]
+* [[ruby_windows_dev_config|Ruby在Windows下的配置]]
+* [[ruby_ubuntu_dev_config|Ruby在Ubuntu下的配置]]
+</h2>
+----

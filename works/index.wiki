@@ -1,15 +1,15 @@
-%title 作品集
+%title 文学作品
 
 [[../index|首页]]
-==作品集==
+==文学作品==
 ----
 <center>
+<h2>
 [[jiyi/index|逝去的记忆]]
-----
-[[memory/index|逝去的记忆新篇章]]
 ----
 [[poems/index|诗作集锦]]
 ----
 [[article/index|独立文集]]
+</h2>
 </center>
 ----

@@ -1,0 +1,42 @@
+%title 不借助库函数实现字符串翻转
+%template code
+
+[[../../index|首页]] - [[../index|Note]] - [[index|Web]]
+==不借助库函数实现字符串翻转==
+----
+{{{
+/**
+ * 计算字符串长度
+ */
+function str_len ($str) {
+    $i = 0;
+    while (isset($str[$i])) {
+        $i++;
+    }
+    return $i;
+}
+
+
+/**
+ * 翻转字符串
+ */
+function str_rev ($str) {
+    $len = str_len($str);
+    for ($i = 0; $i < $len - 1; $i++) {
+        $j = $len - $i - 1;
+        if ($i >= $j) break;  // 左下标大于或等于右下标时中断处理
+        $temp    = $str[$i];
+        $str[$i] = $str[$j];
+        $str[$j] = $temp;
+    }
+    return $str;
+}
+
+
+// 测试
+$name = 'Ruchee';
+var_dump(str_rev($name));
+}}}
+----
+<red>date</red> : 2014-07-07
+----

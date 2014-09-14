@@ -2,3 +2,8 @@
 
 [[../../index|首页]] - [[../index|Note]]
 ==Server==
+----
+<h2>
+* [[nginx_on_windows|Nginx在Windows下的配置]]
+</h2>
+----

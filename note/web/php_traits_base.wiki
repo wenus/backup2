@@ -1,0 +1,10 @@
+%title PHP Traits基础补遗
+%template code
+
+[[../../index|首页]] - [[../index|Note]] - [[index|Web]]
+==PHP Traits基础补遗==
+----
+同名方法优先级：类本身的方法 `>` 来自 `Traits` 的方法 `>` 从父类继承而来的方法
+----
+<red>date</red> : 2014-09-13
+----

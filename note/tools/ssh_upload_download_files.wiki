@@ -1,0 +1,19 @@
+%title SSH远程上传和下载文件
+%template code
+
+[[../../index|首页]] - [[../index|Note]] - [[index|Tools]]
+==SSH远程上传和下载文件==
+----
+`SSH` 登录：`ssh 用户名@主机域名或IP地址`，如 `ssh ruchee@www.ruchee.com`
+
+`SCP` 上传：`scp 本地文件路径 用户名@主机域名或IP地址:远程文件路径`
+
+`SCP` 下载：`scp 用户名@主机域名或IP地址:远程文件路径 本地文件路径`
+
+`SCP` 常用选项
+* `-v`：显示传输进度
+* `-r`：递归上传或下载文件夹
+* `-P 端口号`：更改 `SSH` 端口号
+----
+<red>date</red> : 2014-08-11
+----
