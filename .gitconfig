@@ -3,8 +3,6 @@
 	email = my@ruchee.com
 [core]
 	editor = vim
-	autocrlf = input
-	safecrlf = true
 [alias]
 	cm   = commit
 	co   = checkout
