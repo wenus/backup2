@@ -3,6 +3,8 @@
 	email = my@ruchee.com
 [core]
 	editor = vim
+	autocrlf = input
+	safecrlf = true
 [alias]
 	cm   = commit
 	co   = checkout
@@ -10,8 +12,13 @@
 	fe   = fetch
 	st   = status
 	me   = merge
-	re   = remote add origin
+	di   = diff
+	tg   = tag
+	rs   = reset
+	rv   = revert
+	rm   = remote add origin
 	pu   = push origin master
 	pl   = pull origin master
 	cmm  = commit -m
 	cma  = commit -a -m
+	lo   = log --pretty=format:'%Cgreen%h %Cblue%t %Creset| [%an] [%ad] %s%d' --graph --date=short
