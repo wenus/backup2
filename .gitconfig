@@ -13,10 +13,13 @@
 	di   = diff
 	tg   = tag
 	rs   = reset
+	rb   = rebase
 	rv   = revert
-	rm   = remote add origin
+	re   = remote
 	pu   = push origin master
 	pl   = pull origin master
+	tp   = cat-file -t
+	dp   = cat-file -p
 	cmm  = commit -m
 	cma  = commit -a -m
-	lo   = log --pretty=format:'%Cgreen%h %Cblue%t %Creset| [%an] [%ad] %s%d' --graph --date=short
+	lg   = log --pretty=format:'%Cgreen%h %Cblue%t %Creset| [%an] [%ad] %s%d' --graph --date=short --all
