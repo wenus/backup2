@@ -1,1 +1,2 @@
-ctags -R --languages=ruby ./2.0.0/gems/actionmailer-4.1.5 ./2.0.0/gems/actionpack-4.1.5 ./2.0.0/gems/actionview-4.1.5 ./2.0.0/gems/activemodel-4.1.5 ./2.0.0/gems/activerecord-4.1.5 ./2.0.0/gems/activesupport-4.1.5 ./2.0.0/gems/railties-4.1.5
+@ECHO OFF
+ctags -R --fields=+aimS --languages=php --langmap=php:+.inc
