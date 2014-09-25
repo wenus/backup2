@@ -14,6 +14,7 @@ alias ll='ls -l'                              # long list
 alias la='ls -A'                              # all but . and ..
 alias l='ls -CF'                              #
 alias cls='clear'                             # clear input
+alias chrome='chromium-browser'               # chromium short
 
 
 # For RVM
