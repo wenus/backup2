@@ -1,0 +1,12 @@
+sites/*/settings*.php
+sites/*/services*.yml
+
+sites/*/files
+sites/*/private
+
+sites/simpletest
+
+*.cache
+*.swp
+make_tags.bat
+tags
