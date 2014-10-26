@@ -1,5 +1,4 @@
 PS1='${debian_chroot:+($debian_chroot)}\[\033[01;32m\]Ruchee\[\033[00m\]: \[\033[01;34m\]\w\[\033[00m\] \$ '
-# PS1='${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\u@\h\[\033[00m\]: \[\033[01;34m\]\w\[\033[00m\]\$ '
 
 
 alias less='less -r'                          # raw control characters
@@ -17,6 +16,12 @@ alias cls='clear'                             # clear input
 alias chrome='chromium-browser'               # chromium short
 
 
+# For JVM
+export JAVA_HOME=/usr/lib/jvm/java-7-openjdk-i386
+
+# For Go
+export GOPATH=~/apps/go
+
 # For RVM
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm"
 export PATH="$HOME/.rvm/bin:$PATH"
@@ -25,4 +30,4 @@ export PATH="$HOME/.rvm/bin:$PATH"
 [ -s $HOME/.nvm/nvm.sh ] && . $HOME/.nvm/nvm.sh
 
 # Other Tools
-export PATH="$HOME/apps:$HOME/apps/vendor/bin:$PATH"
+export PATH="$HOME/apps/go/bin:$HOME/apps/erlang:$HOME/apps/php:$HOME/apps/php/vendor/bin:$HOME/apps/groovy/bin:$HOME/apps/scala/bin:$HOME/apps/clojure:$HOME/apps/elixir/bin:$PATH"
