@@ -30,4 +30,4 @@ export PATH="$HOME/.rvm/bin:$PATH"
 [ -s $HOME/.nvm/nvm.sh ] && . $HOME/.nvm/nvm.sh
 
 # Other Tools
-export PATH="$HOME/apps/go/bin:$HOME/apps/erlang:$HOME/apps/php:$HOME/apps/php/vendor/bin:$HOME/apps/groovy/bin:$HOME/apps/scala/bin:$HOME/apps/clojure:$HOME/apps/elixir/bin:$PATH"
+export PATH="$HOME/apps/go/bin:$HOME/apps/erlang:$HOME/apps/php:$HOME/apps/php/vendor/bin:$HOME/apps/groovy/bin:$HOME/apps/scala/bin:$HOME/apps/clojure:$HOME/apps/elixir/bin:$HOME/apps/dart/bin:$HOME/.meteor:$PATH"

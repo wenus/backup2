@@ -1,0 +1,19 @@
+server {
+    listen       80;
+    server_name  cd.ruchee.com;
+
+    error_page 404 /public/404.shtml;
+
+    location / {
+        root   /var/www/mysite;
+        index  index.html index.php;
+    }
+
+    location ~ \.php$ {
+        root                    /var/www/mysite;
+        fastcgi_split_path_info ^(.+\.php)(/.+)$;
+        fastcgi_pass            unix:/var/run/php5-fpm.sock;
+        fastcgi_index           index.php;
+        include                 fastcgi_params;
+    }
+}
