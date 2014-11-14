@@ -16,6 +16,10 @@ alias cls='clear'                             # clear input
 alias chrome='chromium-browser'               # chromium short
 
 
+# For RVM
+[[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm"
+export PATH="$HOME/.rvm/bin:$PATH"
+
 # For NVM
 [ -s $HOME/.nvm/nvm.sh ] && . $HOME/.nvm/nvm.sh
 
