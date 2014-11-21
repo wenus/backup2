@@ -1,4 +1,0 @@
-%title Julia
-
-[[../../index|首页]] - [[../index|Note]]
-==Julia==

@@ -1,4 +1,0 @@
-%title C语言
-
-[[../../index|首页]] - [[../index|Note]]
-==C语言==

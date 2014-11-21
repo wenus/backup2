@@ -1,4 +1,0 @@
-%title Dlang
-
-[[../../index|首页]] - [[../index|Note]]
-==Dlang==

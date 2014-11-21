@@ -1,4 +1,0 @@
-%title Swift
-
-[[../../index|首页]] - [[../index|Note]]
-==Swift==

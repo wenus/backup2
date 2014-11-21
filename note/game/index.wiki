@@ -1,4 +1,0 @@
-%title Game
-
-[[../../index|首页]] - [[../index|Note]]
-==Game==

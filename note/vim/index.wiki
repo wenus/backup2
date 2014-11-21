@@ -1,4 +1,0 @@
-%title Vim
-
-[[../../index|首页]] - [[../index|Note]]
-==Vim==

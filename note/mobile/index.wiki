@@ -1,4 +1,0 @@
-%title Mobile
-
-[[../../index|首页]] - [[../index|Note]]
-==Mobile==

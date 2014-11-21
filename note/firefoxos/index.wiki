@@ -1,4 +1,0 @@
-%title Firefox OS
-
-[[../../index|首页]] - [[../index|Note]]
-==Firefox OS==

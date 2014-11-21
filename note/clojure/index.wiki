@@ -1,4 +1,0 @@
-%title Clojure
-
-[[../../index|首页]] - [[../index|Note]]
-==Clojure==

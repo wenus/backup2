@@ -1,4 +1,0 @@
-%title Elixir
-
-[[../../index|首页]] - [[../index|Note]]
-==Elixir==

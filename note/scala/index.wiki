@@ -1,4 +1,0 @@
-%title Scala
-
-[[../../index|首页]] - [[../index|Note]]
-==Scala==

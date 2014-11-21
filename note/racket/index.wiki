@@ -1,4 +1,0 @@
-%title Racket
-
-[[../../index|首页]] - [[../index|Note]]
-==Racket==
