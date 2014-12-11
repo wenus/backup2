@@ -1,2 +1,1 @@
-@ECHO OFF
-ctags -R --languages=ruby ./gems/actionmailer-4.1.7 ./gems/actionpack-4.1.7 ./gems/actionview-4.1.7 ./gems/activemodel-4.1.7 ./gems/activerecord-4.1.7 ./gems/activesupport-4.1.7 ./gems/railties-4.1.7
+ctags -R --languages=ruby ./2.1.0 ./gems/2.1.0/gems/actionmailer-4.1.8 ./gems/2.1.0/gems/actionpack-4.1.8 ./gems/2.1.0/gems/actionview-4.1.8 ./gems/2.1.0/gems/activemodel-4.1.8 ./gems/2.1.0/gems/activerecord-4.1.8 ./gems/2.1.0/gems/activesupport-4.1.8 ./gems/2.1.0/gems/railties-4.1.8 ./gems/2.1.0/gems/sinatra-1.4.5 ./gems/2.1.0/gems/rspec-3.1.0 ./gems/2.1.0/gems/rspec-core-3.1.7 ./gems/2.1.0/gems/rspec-expectations-3.1.2 ./gems/2.1.0/gems/rspec-mocks-3.1.3 ./gems/2.1.0/gems/rspec-support-3.1.2
