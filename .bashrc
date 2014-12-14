@@ -27,4 +27,4 @@ export PATH="$HOME/.rvm/bin:$PATH"
 export GOPATH="$HOME/apps/go"
 
 # Other Tools
-export PATH="$HOME/apps:$HOME/apps/vendor/bin:$HOME/apps/groovy/bin:$HOME/apps/scala/bin:$HOME/apps/elixir/bin:$HOME/apps/go/bin:$PATH"
+export PATH="$HOME/apps:$HOME/apps/go/bin:$HOME/apps/vendor/bin:$HOME/apps/scala/bin:$HOME/apps/elixir/bin:$PATH"
