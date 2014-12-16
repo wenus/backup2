@@ -1,0 +1,60 @@
+%title 7744问题
+%template code
+
+[[../../index|首页]] - [[../index|Notes]] - [[index|Algorithms]]
+==7744问题==
+----
+===问题描述===
+
+输出所有形如 `aabb` 的完全平方数（只有 `7744` 满足要求）
+
+----
+===解题思路===
+
+易错点在于完全平方数的判断
+----
+===问题求解===
+
+`C语言`（方法一，顺序穷举再依次筛选 `aabb` 和完全平方）
+{{{Clang
+#include <stdio.h>
+#include <math.h>
+
+
+int main (int argc, char* argv[]) {
+    for (int i = 1000; i <= 9999; ++i) {
+        if (i / 1000 == i / 100 % 10 && i / 10 % 10 == i % 10) {
+            float m = sqrt(i);
+            if (m == floor(m + 0.5)) {
+                printf("%d\n", i);
+            }
+        }
+    }
+
+    return 0;
+}
+}}}
+
+`C语言`（方法二，在既定范围内组装完全平方数，再筛选 `aabb`）
+{{{Clang
+#include <stdio.h>
+
+
+int main (int argc, char* argv[]) {
+    for (int i = 1; ; ++i) {
+        int n = i * i;
+
+        if (n < 1000) continue;
+        if (n > 9999) break;
+
+        if (n / 1000 == n / 100 % 10 && n / 10 % 10 == n % 10) {
+            printf("%d\n", n);
+        }
+    }
+
+    return 0;
+}
+}}}
+----
+<red>date</red> : 2012-09-14、2014-11-24
+----

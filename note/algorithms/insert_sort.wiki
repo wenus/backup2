@@ -1,0 +1,84 @@
+%title 插入排序
+%template code
+
+[[../../index|首页]] - [[../index|Notes]] - [[index|Algorithms]]
+==插入排序==
+----
+===算法描述===
+
+从数组最前面开始，每次选择一个小的区间，将这个小区间按从小到大排好序
+
+然后将小区间的范围向右伸展一位，当成新的小区间，对该小区间再次按从小到大排序
+
+这样，当区间伸展到和原数组一样大小时，整个数组的所有元素就都已经排好序了
+
+该排序方法的 `原理` 是：每次伸展之前，前面的若干位元素都是按顺序排好的
+----
+===算法实现===
+
+`Ruby`
+{{{Ruby
+# 插排
+class Array
+  def insert_sort!
+    len = self.length
+    1.upto(len - 1) do |i|
+      i.downto(1) do |j|
+        self[j], self[j - 1] = self[j - 1], self[j] if self[j] < self[j -1]
+      end
+    end
+  end
+end
+
+
+# 测试
+arr = (1..10).to_a.shuffle
+p arr
+
+arr.insert_sort!
+p arr
+}}}
+
+`PHP`
+{{{PHP
+<?php
+
+// 插排
+function insert_sort (&$arr) {
+    $len = count($arr);
+    for ($i = 1; $i < $len; ++$i) {
+        for ($j = $i; $j >= 1; --$j) {
+            if ($arr[$j] < $arr[$j - 1]) {
+                $temp = $arr[$j];
+                $arr[$j] = $arr[$j - 1];
+                $arr[$j - 1] = $temp;
+            }
+        }
+    }
+}
+
+
+// 打印数组
+function print_arr ($arr) {
+    echo '[';
+    for ($i = 0; $i < count($arr) - 1; ++$i) {
+        echo $arr[$i].' ';
+    }
+    echo $arr[count($arr) - 1];
+    echo ']';
+}
+
+
+// 测试
+$arr = range(1, 10);
+shuffle($arr);
+print_arr($arr);
+echo "\n";
+
+insert_sort($arr);
+print_arr($arr);
+echo "\n";
+}}}
+----
+<red>date</red> : 2013-02-21、2014-11-22
+----

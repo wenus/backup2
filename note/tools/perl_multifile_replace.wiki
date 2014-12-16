@@ -1,7 +1,6 @@
 %title 使用Perl实现多文件批量替换
-%template code
 
-[[../../index|首页]] - [[../index|Note]] - [[index|Tools]]
+[[../../index|首页]] - [[../index|Notes]] - [[index|Tools]]
 ==使用Perl实现多文件批量替换==
 ----
 `find -type f -name '*.php' | xargs perl -pi -e 's|old_string|new_string|g'`

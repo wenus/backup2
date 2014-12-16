@@ -1,0 +1,44 @@
+%title 浅尝mRuby
+%template code
+
+[[../../index|首页]] - [[../index|Notes]] - [[index|PLS]]
+==浅尝mRuby==
+----
+===在Windows下编译mRuby===
+
+# 访问 `https://github.com/mruby/mruby/releases`，下载最新的版本（写本文时，最新为 `1.0.0`）
+# 将其解压后，在其根目录打开命令行，执行 `make`（当然了，`MinGW` 和 `Ruby` 你是必须提前就装好了的）
+# 编译完成后拷贝 `build/host` 下面的文件以及根目录下的 `include` 目录到新的文件夹，譬如 `D:\mRuby`
+# 确保新文件夹下具有这样的结构：`bin`、`include`、`lib`、`mrbgems`、`mrblib`，其他的可以删掉
+# 将 `D:\mRuby\bin` 目录加入 `path` 环境变量
+# 打开命令行执行 `mruby --version`，如打印出版本信息则无误
+----
+===测试在C代码中调用mRuby解释器===
+
+# 新建一个 `hello.c` 源文件，内容如下：
+{{{Clang
+#include <stdio.h>
+#include <stdlib.h>
+
+#include <mruby.h>
+#include <mruby/compile.h>
+
+int main (int argc, char *argv[]) {
+    mrb_state *mrb = mrb_open();
+    char code[] = "puts 'Hello World!'";
+    printf("Executing Ruby code with mRuby!\n");
+
+    mrb_load_string(mrb, code);
+
+    return 0;
+}
+}}}
+# 打开命令行，执行这样的命令进行编译（具体路径视你的 `mRuby` 安装路径而定）：`gcc -ID:\mRuby\include hello.c -LD:\mRuby\lib -lmruby -o hello`
+# 编译成功后，在当前命令行上执行 `hello`，应该会输出如下信息：
+{{{
+Executing Ruby code with mRuby!
+Hello World!
+}}}
+----
+<red>code</red> : 2014-03-06
+----

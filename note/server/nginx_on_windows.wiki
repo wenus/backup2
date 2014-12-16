@@ -1,7 +1,7 @@
 %title Nginx在Windows下的配置
 %template code
 
-[[../../index|首页]] - [[../index|Note]] - [[index|Server]]
+[[../../index|首页]] - [[../index|Notes]] - [[index|Server]]
 ==Nginx在Windows下的配置==
 ----
 ===准备软件===
@@ -32,7 +32,7 @@ exit
 打开 `php.ini`，找到 `cgi.fix_pathinfo=1`，如果没有开启则去掉它前面的注释开启
 
 打开 `nginx.conf`，下面是基本的配置：
-{{{
+{{{Nginx
 worker_processes  4;
 
 events {

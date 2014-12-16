@@ -1,11 +1,11 @@
-%title 用JS检测访问设备
+%title 用JavaScript检测访问设备
 %template code
 
-[[../../index|首页]] - [[../index|Note]] - [[index|Web]]
-==用JS检测访问设备==
+[[../../index|首页]] - [[../index|Notes]] - [[index|Web]]
+==用JavaScript检测访问设备==
 ----
 手机浏览电脑版站点时跳转到手机版
-{{{
+{{{JavaScript
 function mobile_redirect(url) {
     var u = navigator.userAgent.toLowerCase();
     if (u.match(/android|iphone|ipad|ipod|windows phone/)) {
@@ -15,7 +15,7 @@ function mobile_redirect(url) {
 }}}
 
 电脑浏览手机版站点时跳转到电脑版
-{{{
+{{{JavaScript
 function pc_redirect(url) {
     var u = navigator.userAgent.toLowerCase();
     var p = navigator.platform.toLowerCase();

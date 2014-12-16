@@ -1,8 +1,8 @@
-%title sed用法
+%title sed使用方法
 %template code
 
-[[../../index|首页]] - [[../index|Note]] - [[index|Tools]]
-==sed用法==
+[[../../index|首页]] - [[../index|Notes]] - [[index|Tools]]
+==sed使用方法==
 ----
 ===基本替换===
 
@@ -11,7 +11,7 @@
 方式二，用选项分隔指令：`sed -ne 's/^/<h1>/' -e 's/$/<\/h1>/p' -e 'q' abc.txt`
 
 方式三，将指令写入脚本再执行：`sed -f abc.sed abc.txt`
-{{{
+{{{Sed
 #!/user/bin/env sed
 
 s/^/<h1>/

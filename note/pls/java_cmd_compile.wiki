@@ -1,0 +1,13 @@
+%title Java在命令行下的编译方法
+
+[[../../index|首页]] - [[../index|Notes]] - [[index|Java]]
+==Java在命令行下的编译方法==
+----
+不带包名的程序，直接 `javac ClassName.java` 编译，然后 `java ClassName` 运行即可
+
+对于带包名的程序，如 `package testA.testB.testC;`，则编译时需要在包的顶层目录指定源文件的相对路径或绝对路径，而运行时则需要指定完整的包名
+
+对于在上述包路径下的源文件，编译方法为：`javac testA/testB/testC/ClassName.java`，运行方法为：`java testA.testB.testC.ClassName`
+----
+<red>date</red> : 2014-04-28
+----

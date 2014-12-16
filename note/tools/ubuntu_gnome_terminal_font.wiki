@@ -1,10 +1,9 @@
 %title Ubuntu下设置Gnome-Terminal字体
-%template code
 
-[[../../index|首页]] - [[../index|Note]] - [[index|Tools]]
+[[../../index|首页]] - [[../index|Notes]] - [[index|Tools]]
 ==Ubuntu下设置Gnome-Terminal字体==
 ----
-不知道从什么时候开始，`Gnome-Terminal` 在默认设置里居然找不到 `Monaco` 字体了，这个当然不能忍
+不知道从什么时候开始，`Gnome-Terminal` 居然设置不了 `Monaco` 字体了，这个当然不能忍
 
 下面是突破这个限制的方法：
 # 首先，下载到 `Monaco` 字体文件，然后将其移动到 `~/.fonts` 目录（不存在就自己新建）
@@ -15,5 +14,5 @@
 
 以后就可以直接在 `Gnome-Terminal` 里修改字体的大小，只是不能变更为其他字体，否则又得用 `gconf-editor` 才能改回 `Monaco` 了
 ----
-<red>date</red> : 2014-04-21
+<red>date</red> : 2014-04-21、2014-11-21
 ----

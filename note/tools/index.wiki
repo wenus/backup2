@@ -1,14 +1,15 @@
 %title Tools
 
-[[../../index|首页]] - [[../index|Note]]
+[[../../index|首页]] - [[../index|Notes]]
 ==Tools==
 ----
 <h2>
-* [[sed_usage|sed用法]]
-* [[perl_multifile_replace|使用Perl实现多文件批量替换]]
-* [[windows_bat_simple_usage|Windows下通用bat文件的简单写法]]
+* [[bash_base|Bash基础]]
+* [[web_chrome_help_tools|Web工程师浏览器端辅助工具集锦]]
 * [[ssh_upload_download_files|SSH远程上传和下载文件]]
-* [[bash_review|Bash复习笔记]]
+* [[perl_multifile_replace|使用Perl实现多文件批量替换]]
+* [[windows_bat_usage|Windows下bat文件的使用方法]]
+* [[sed_usage|sed使用方法]]
 * [[ctags_usage|ctags使用方法]]
 * [[ubuntu_gnome_terminal_font|Ubuntu下设置Gnome-Terminal字体]]
 </h2>

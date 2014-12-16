@@ -1,10 +1,10 @@
 %title DataBase
 
-[[../../index|首页]] - [[../index|Note]]
+[[../../index|首页]] - [[../index|Notes]]
 ==DataBase==
 ----
 <h2>
-* [[mysql_base_review|MySQL基础复习]]
+* [[redis_base|Redis学习笔记]]
+* [[mysql_base|MySQL基础]]
 </h2>
 ----
-

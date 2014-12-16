@@ -1,9 +1,10 @@
 %title Server
 
-[[../../index|首页]] - [[../index|Note]]
+[[../../index|首页]] - [[../index|Notes]]
 ==Server==
 ----
 <h2>
+* [[php_share_session|PHP集群下的session共享]]
 * [[nginx_on_windows|Nginx在Windows下的配置]]
 </h2>
 ----

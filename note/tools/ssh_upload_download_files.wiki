@@ -1,7 +1,6 @@
 %title SSH远程上传和下载文件
-%template code
 
-[[../../index|首页]] - [[../index|Note]] - [[index|Tools]]
+[[../../index|首页]] - [[../index|Notes]] - [[index|Tools]]
 ==SSH远程上传和下载文件==
 ----
 `SSH` 登录：`ssh 用户名@主机域名或IP地址`，如 `ssh ruchee@www.ruchee.com`

@@ -1,11 +1,9 @@
 %title CSBase
 
-[[../../index|首页]] - [[../index|Note]]
+[[../../index|首页]] - [[../index|Notes]]
 ==CSBase==
 ----
 <h2>
-* [[cpp_base_review|C++基础复习]]
-* [[c_function_points|C语言函数与指针]]
-* [[regex_note|正则表达式笔记]]
+* [[regex_base|正则表达式基础]]
 </h2>
 ----
