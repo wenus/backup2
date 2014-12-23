@@ -27,4 +27,4 @@ export PATH="$HOME/.rvm/bin:$PATH"
 [ -s $HOME/.nvm/nvm.sh ] && . $HOME/.nvm/nvm.sh
 
 # Other Tools
-export PATH="$HOME/apps:$HOME/apps/go/bin:$HOME/apps/vendor/bin:$HOME/apps/scala/bin:$HOME/apps/elixir/bin:$HOME/apps/dart/bin:$PATH"
+export PATH="$HOME/apps:$HOME/apps/go/bin:$HOME/apps/vendor/bin:$PATH"
