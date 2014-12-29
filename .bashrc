@@ -10,9 +10,9 @@ alias ls='ls -hF --color=tty'                 # classify files in colour
 alias dir='ls --color=auto --format=vertical'
 alias vdir='ls --color=auto --format=long'
 alias ll='ls -l'                              # long list
-alias la='ls -A'                              # all but . and ..
+alias la='ls -A'                              # all but not . and ..
 alias l='ls -CF'                              #
-alias cls='clear'                             # clear input
+alias cls='clear'                             # clear input and output
 alias chrome='chromium-browser'               # chromium short
 
 
@@ -27,4 +27,4 @@ export PATH="$HOME/.rvm/bin:$PATH"
 [ -s $HOME/.nvm/nvm.sh ] && . $HOME/.nvm/nvm.sh
 
 # Other Tools
-export PATH="$HOME/apps:$HOME/apps/go/bin:$HOME/apps/vendor/bin:$PATH"
+export PATH="$HOME/apps:$HOME/apps/go/bin:$HOME/apps/vendor/bin:$HOME/apps/groovy/bin:$HOME/apps/scala/bin:$HOME/apps/elixir/bin:$HOME/apps/dart/bin:$PATH"
