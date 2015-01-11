@@ -1,0 +1,31 @@
+%title 用JavaScript检测访问设备
+%template code
+
+[[../../index|首页]] - [[../index|Notes]] - [[index|Web]]
+==用JavaScript检测访问设备==
+----
+手机浏览电脑版站点时跳转到手机版
+{{{JavaScript
+function mobile_redirect(url) {
+    var u = navigator.userAgent.toLowerCase();
+    if (u.match(/android|iphone|ipad|ipod|windows phone/)) {
+        window.location.href = url;
+    }
+}
+}}}
+
+电脑浏览手机版站点时跳转到电脑版
+{{{JavaScript
+function pc_redirect(url) {
+    var u = navigator.userAgent.toLowerCase();
+    var p = navigator.platform.toLowerCase();
+    if (p.match(/win32|win64|mac|x11|unix/)) {
+        window.location.href = url;
+    } else if (p.match(/linux/) && !u.match(/android/)) {
+        window.location.href = url;
+    }
+}
+}}}
+----
+<red>date</red> : 2014-09-01
+----

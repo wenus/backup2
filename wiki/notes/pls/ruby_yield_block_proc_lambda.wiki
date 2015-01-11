@@ -1,0 +1,60 @@
+%title Ruby Yield Block Proc Lambda
+%template code
+
+[[../../index|首页]] - [[../index|Notes]] - [[index|PLS]]
+==Ruby Yield Block Proc Lambda==
+----
+===Yield===
+
+{{{Ruby
+def call_block
+  yield 1
+  yield 2
+  yield 3
+end
+
+call_block { |i| puts i }
+}}}
+----
+===Block===
+
+{{{Ruby
+def call_block (&block)
+  block.call 1
+  block.call 2
+  block.call 3
+end
+
+call_block { |i| puts i }
+}}}
+----
+===Proc===
+
+{{{Ruby
+def call_block (&block)
+  block.call 1
+  block.call 2
+  block.call 3
+end
+
+p = Proc.new { |i| puts i }
+
+call_block &p
+}}}
+----
+===Lambda===
+
+{{{Ruby
+def call_block (&block)
+  block.call 1
+  block.call 2
+  block.call 3
+end
+
+p = ->i { puts i }
+
+call_block &p
+}}}
+----
+<red>date</red> : 2014-12-16
+----

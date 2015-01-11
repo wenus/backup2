@@ -1,0 +1,13 @@
+%title Ruchee的荒草园子
+----
+<center>
+<h2>
+[[about|{{../public/images/ruchee.jpg}}]]
+----
+[[album/index|Album]]
+[[journal/index|Journal]]
+[[works/index|Works]]
+[[notes/index|Notes]]
+</h2>
+</center>
+----

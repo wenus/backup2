@@ -1,0 +1,14 @@
+%title Girl Friend
+
+[[../../index|首页]] - [[../index|Album]]
+==Girl Friend==
+----
+<center>
+<p style="display:none;">
+[[pic09|{{../../../public/images/gf/yun07.jpg||width="400px" height="530px"}}]]
+</p>
+你什么都没看到，对不对？看[[pic09|下一张]]吧
+</center>
+----
+<red>date</red> : 2013-10-27
+----

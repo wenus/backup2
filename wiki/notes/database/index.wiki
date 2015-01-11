@@ -1,0 +1,10 @@
+%title 数据库
+
+[[../../index|首页]] - [[../index|Notes]]
+==数据库==
+----
+<h2>
+* [[redis_base|Redis学习笔记]]
+* [[mysql_base|MySQL基础]]
+</h2>
+----

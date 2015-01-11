@@ -1,0 +1,20 @@
+%title Ruchee
+%template null
+----
+[[index|返回首页]]
+<center>
+=个人简介=
+
+`男`
+`码农`
+`计算机科班`
+----
+=联系方式=
+
+邮箱：`my@ruchee.com`
+企鹅：`1405665177`
+
+[[mailto:my@ruchee.com|{{../public/images/email.gif||title="my@ruchee.com"}}]]
+[[http://wpa.qq.com/msgrd?v=3&uin=1405665177&site=qq&menu=yes|{{http://wpa.qq.com/pa?p=2:1405665177:52||title="1405665177"}}]]
+</center>
+----

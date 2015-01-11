@@ -1,0 +1,13 @@
+%title 个人相册
+
+[[../index|返回首页]]
+==个人相册==
+----
+<center>
+<h2>
+[[me/index|Me]]
+[[gf/index|Gf]]
+[[family/index|Fm]]
+</h2>
+</center>
+----

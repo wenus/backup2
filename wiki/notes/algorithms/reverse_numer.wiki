@@ -1,0 +1,79 @@
+%title 翻转数字
+%template code
+
+[[../../index|首页]] - [[../index|Notes]] - [[index|Algorithms]]
+==翻转数字==
+----
+===问题描述===
+
+输入一个正整数，倒序输出每一个数字，如输入 `123`，输出应为 `321`
+----
+===解题思路===
+
+从最低位开始，每次对 `10` 取余进行剥离
+----
+===问题求解===
+
+`C`
+{{{C
+#include <stdio.h>
+
+
+void reverse (long num) {
+    printf("%d", (int)(num % 10));
+
+    long res = num / 10;
+    if (res > 0) {
+        reverse(res);
+    }
+}
+
+
+int main (int argc, char* argv[]) {
+    long num;
+
+    printf("plase enter a number: ");
+    scanf("%ld", &num);
+
+    printf("reverse number is: ");
+    reverse(num);
+    printf("\n");
+
+    return 0;
+}
+}}}
+
+
+`C++`
+{{{C++
+#include <iostream>
+using namespace std;
+
+
+template <typename T>
+void reverse (T num) {
+    cout << num % 10;
+
+    T res = num / 10;
+    if (res > 0) {
+        reverse(res);
+    }
+}
+
+
+int main (int argc, char* argv[]) {
+    long num;
+
+    cout << "plase enter a number: ";
+    cin >> num;
+
+    cout << "reverse number is: ";
+    reverse(num);
+    cout << endl;
+
+    return 0;
+}
+}}}
+----
+<red>date</red>：2014-10-28
+----

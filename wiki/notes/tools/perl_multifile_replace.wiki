@@ -1,0 +1,9 @@
+%title 使用Perl实现多文件批量替换
+
+[[../../index|首页]] - [[../index|Notes]] - [[index|Tools]]
+==使用Perl实现多文件批量替换==
+----
+`find -type f -name '*.php' | xargs perl -pi -e 's|old_string|new_string|g'`
+----
+<red>date</red> : 2014-08-25
+----

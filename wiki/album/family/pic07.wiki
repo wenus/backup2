@@ -1,0 +1,9 @@
+%title Family
+
+[[../../index|首页]] - [[../index|Album]]
+==Family==
+----
+<center>[[pic08|{{../../../public/images/family/f07.jpg}}]]</center>
+----
+<red>date</red> : 2014-06-02
+----

@@ -1,0 +1,10 @@
+%title Web开发
+
+[[../../index|首页]] - [[../index|Notes]]
+==Web开发==
+----
+<h2>
+* [[css_base|CSS学习笔记]]
+* [[javascript_check_device|用JavaScript检测访问设备]]
+</h2>
+----

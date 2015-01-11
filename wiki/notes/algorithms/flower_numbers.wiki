@@ -1,0 +1,68 @@
+%title 水仙花数的求解
+%template code
+
+[[../../index|首页]] - [[../index|Notes]] - [[index|Algorithms]]
+==水仙花数的求解==
+----
+===问题描述===
+
+一个三位数 `ABC`，若 `ABC == A*A*A + B*B*B + C*C*C`，则该数为水仙花数，打印出所有这样的数
+----
+===问题求解===
+
+`C语言`（方法一，使用三重循环求解）
+{{{Clang
+#include <stdio.h>
+
+
+int main (int argc, char* argv[]) {
+    int num, sum;
+
+    for (int a = 1; a <= 9; ++a) {
+        for (int b = 0; b <= 9; ++b) {
+            for (int c = 0; c <= 9; ++c) {
+                // 拼接数字
+                num = a*100 + b*10 + c;
+                // 计算总和
+                sum = a*a*a + b*b*b + c*c*c;
+                if (num == sum) {
+                    printf("%d ", num);
+                }
+            }
+        }
+    }
+
+    printf("\b\n");
+
+    return 0;
+}
+}}}
+
+`C语言`（方法二，只用一重循环，各个位的数字自行计算得出）
+{{{Clang
+#include <stdio.h>
+
+
+int main (int argc, char* argv[]) {
+    int a, b, c, num, sum;
+
+    for (num = 100; num <= 999; ++num) {
+        // 分解各数位的数字
+        a = num / 100;
+        b = num / 10 % 10;
+        c = num % 10;
+
+        sum = a*a*a + b*b*b + c*c*c;
+        if (num == sum) {
+            printf("%d ", num);
+        }
+    }
+
+    printf("\b\n");
+
+    return 0;
+}
+}}}
+----
+<red>date</red> : 2012-09-16、2014-11-25
+----

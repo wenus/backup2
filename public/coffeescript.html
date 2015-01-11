@@ -1,0 +1,210 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+<title>CoffeeScript</title>
+<meta name="Generator" content="Vim/7.4">
+<meta name="plugin-version" content="vim7.4_v1">
+<meta name="syntax" content="txt">
+<meta name="settings" content="use_css,pre_wrap,no_foldcolumn,expand_tabs,prevent_copy=">
+<meta name="colorscheme" content="molokai">
+<style type="text/css">
+<!--
+pre { white-space: pre-wrap; font-family: monospace; color: #f8f8f2; background-color: #1b1d1e; }
+body { font-family: monospace; color: #f8f8f2; background-color: #1b1d1e; }
+* { font-size: 20px; }
+a { color: white; }
+
+.Special { color: #66d9ef; background-color: #1b1d1e; padding-bottom: 1px; font-style: italic; }
+.Title { color: #ef5939; font-weight: bold; }
+.DiffAdd { background-color: #13354a; padding-bottom: 1px; }
+
+.php_Operator { color: #f92672; }
+.php_PreProc { color: #a6e22e; }
+.php_Statement { color: #f92672; font-weight: bold; }
+.php_Constant { color: #ae81ff; font-weight: bold; }
+.php_Identifier { color: #fd971f; }
+.php_Comment { color: #465457; }
+.php_Delimiter { color: #8f8f8f; }
+.php_Special { color: #66d9ef; background-color: #1b1d1e; padding-bottom: 1px; font-style: italic; }
+
+.py_Function { color: #a6e22e; }
+.py_Statement { color: #f92672; font-weight: bold; }
+.py_Repeat { color: #f92672; font-weight: bold; }
+.py_Number { color: #ae81ff; }
+.py_Comment { color: #465457; }
+
+.rb_PreProc { color: #a6e22e; }
+.rb_Constant { color: #ae81ff; font-weight: bold; }
+.rb_Define { color: #66d9ef; }
+.rb_Function { color: #a6e22e; }
+.rb_Identifier { color: #fd971f; }
+.rb_Statement { color: #f92672; font-weight: bold; }
+.rb_Type { color: #66d9ef; }
+.rb_Comment { color: #465457; }
+.rb_Number { color: #ae81ff; }
+.rb_Keyword { color: #f92672; font-weight: bold; }
+
+.js_Operator { color: #f92672; }
+.js_Repeat { color: #f92672; font-weight: bold; }
+.js_Function { color: #a6e22e; }
+.js_Special { color: #66d9ef; background-color: #1b1d1e; padding-bottom: 1px; font-style: italic; }
+.js_StorageClass { color: #fd971f; font-style: italic; }
+.js_Type { color: #66d9ef; }
+.js_Comment { color: #465457; }
+.js_Number { color: #ae81ff; }
+
+.coffee_Operator { color: #f92672; }
+.coffee_Repeat { color: #f92672; font-weight: bold; }
+.coffee_SpecialChar { color: #f92672; font-weight: bold; }
+.coffee_Number { color: #ae81ff; }
+.coffee_Comment { color: #465457; }
+
+-->
+</style>
+
+<script type='text/javascript'>
+<!--
+
+-->
+</script>
+</head>
+<body>
+<pre id='vimCodeElement'>
+CoffeeScript是什么？
+
+CoffeeScript是一种JavaScript的转译语言，目的是简化JS的编写，减少编码量，降低编码难度
+借用官网一句话：CoffeeScript is just JavaScript
+
+<span class="Special">（JS 的转译技术还有很多，譬如 Google 的 GWT，微软的 TypeScript，Clojure 社区的 ClojureScript 等，但唯有 CoffeeScript 得到了广泛应用）</span>
+
+<hr/>
+CoffeeScript的历史
+
+CoffeeScript最初由 Jeremy Ashkenas 使用 Ruby 编写而成，并在2009年末发布；而后在2010年初，CoffeeScript 改用 CoffeeScript 自身来实现，并正式融入 Node 社区
+
+<span class="Special">（此外 Jeremy Ashkenas 还是 Backbone.js 和 Underscore.js 这两个知名 JS 框架的作者，可以说 RoR 社区和 Node 社区牛人辈出）</span>
+
+<hr/>
+CoffeeScript的安装
+
+<span class="Title">1. 从 <a href="http://nodejs.org" target="_blank">http://nodejs.org</a> 下载安装包（Windows）或者 sudo apt-get install npm（Debian/Ubuntu）</span>
+<span class="Title">2. npm -g install coffee-script</span>
+<span class="Title">3. coffee -e &quot;console.log 'Hello Coffee'&quot;</span>
+<span class="DiffAdd">&gt;</span> Hello Coffee
+
+<hr/>
+CoffeeScript的主要特点
+
+<span class="Title">1. 大量借鉴 Python 和 Ruby 的语法 - PYer 和 Rber 会觉得 CoffeeScript 写起来特别亲切</span>
+<span class="Title">2. 语法依赖于代码的缩进形式（come from Python）</span>
+<span class="Title">3. 方法调用可省略括号（come from Ruby）</span>
+<span class="Title">4. 语句末尾不需要分号（come from Python and Ruby）</span>
+<span class="Title">5. 函数最后一个表达式的执行结果自动成为函数的返回值（come from Ruby）</span>
+<span class="Title">6. 任何语句都是表达式且都有返回值 - 这意味着可以将 if 等判断语句后置（come from Python and Ruby）</span>
+<span class="Title">7. OOP 借鉴 Ruby 的对象系统实现 - 将 JS 晦涩的原型继承用更常用的类继承替代</span>
+<span class="Title">8. 更多特性可参阅官网示例 - 简洁易懂 - <a href="http://coffeescript.org/" target="_blank">http://coffeescript.org/</a></span>
+
+<hr/>
+下面以斐波那契数列为例比较下各语言的书写方式 <span class="Special">[PHP Python Ruby JavaScript CoffeeScript CoffeeScript编译生成的JS]</span>
+
+<span class="Special">（斐波那契数列指的是这样一个数列 0, 1, 1, 2, 3, 5, 8, 13, 21, 34, 55, 89, 144, ...）</span>
+
+<hr/>
+<span class="php_Comment">// PHP</span>
+<span class="php_PreProc">function</span> fib <span class="php_Special">(</span><span class="php_Operator">$</span><span class="php_Identifier">n</span><span class="php_Special">)</span> <span class="php_Special">{</span>
+    <span class="php_Statement">list</span><span class="php_Special">(</span><span class="php_Operator">$</span><span class="php_Identifier">x1</span>, <span class="php_Operator">$</span><span class="php_Identifier">x2</span>, <span class="php_Operator">$</span><span class="php_Identifier">i</span><span class="php_Special">)</span> <span class="php_Operator">=</span> <span class="php_Type">array</span><span class="php_Special">(</span><span class="php_Constant">0</span>, <span class="php_Constant">1</span>, <span class="php_Constant">1</span><span class="php_Special">)</span>;
+
+    <span class="php_Statement">while</span> <span class="php_Special">(</span><span class="php_Operator">$</span><span class="php_Identifier">i</span> <span class="php_Operator">&lt;=</span> <span class="php_Operator">$</span><span class="php_Identifier">n</span><span class="php_Special">)</span> <span class="php_Special">{</span>
+        <span class="php_PreProc">echo</span> <span class="php_Operator">$</span><span class="php_Identifier">x1</span><span class="php_Operator">.</span>&quot;<span class="php_Special">\n</span>&quot;;
+        <span class="php_Operator">$</span><span class="php_Identifier">x1_temp</span> <span class="php_Operator">=</span> <span class="php_Operator">$</span><span class="php_Identifier">x1</span>;
+        <span class="php_Operator">$</span><span class="php_Identifier">x1</span> <span class="php_Operator">=</span> <span class="php_Operator">$</span><span class="php_Identifier">x2</span>;
+        <span class="php_Operator">$</span><span class="php_Identifier">x2</span> <span class="php_Operator">+=</span> <span class="php_Operator">$</span><span class="php_Identifier">x1_temp</span>;
+        <span class="php_Operator">$</span><span class="php_Identifier">i</span><span class="php_Operator">++</span>;
+    <span class="php_Special">}</span>
+<span class="php_Special">}</span>
+
+fib<span class="php_Special">(</span><span class="php_Constant">10</span><span class="php_Special">)</span>;
+
+<hr/>
+
+<span class="py_Comment"># Python</span>
+<span class="py_Statement">def</span> <span class="py_Function">fib</span>(n):
+    x1, x2, i = <span class="py_Number">0</span>, <span class="py_Number">1</span>, <span class="py_Number">1</span>
+
+    <span class="py_Repeat">while</span>(i &lt;= n):
+        <span class="py_Function">print</span> x1
+        x1, x2 = x2, x1+x2
+        i += <span class="py_Number">1</span>
+
+fib(<span class="py_Number">10</span>)
+
+<hr/>
+
+<span class="rb_Comment"># Ruby</span>
+<span class="rb_Define">class</span> <span class="rb_Type">Fixnum</span>
+  <span class="rb_Define">def</span> <span class="rb_Function">fib</span>
+    x1, x2 = <span class="rb_Number">0</span>, <span class="rb_Number">1</span>
+    <span class="rb_Constant">self</span>.times <span class="rb_Statement">do</span>
+      <span class="rb_Keyword">yield</span> x1
+      x1, x2 = x2, x1+x2
+    <span class="rb_Statement">end</span>
+  <span class="rb_Define">end</span>
+<span class="rb_Define">end</span>
+
+<span class="rb_Number">10</span>.fib { |<span class="rb_Identifier">i</span>| puts i }
+
+<hr/>
+
+<span class="js_Comment">// JavaScript</span>
+<span class="js_Type">function</span> <span class="js_Function">fib</span> (n) {
+  <span class="js_StorageClass">var</span> x1 <span class="js_Operator">=</span> <span class="js_Number">0</span>;
+  <span class="js_StorageClass">var</span> x2 <span class="js_Operator">=</span> <span class="js_Number">1</span>;
+  <span class="js_StorageClass">var</span> i  <span class="js_Operator">=</span> <span class="js_Number">1</span>;
+
+  <span class="js_Repeat">while</span> (i <span class="js_Operator">&lt;=</span> n) {
+    <span class="js_Special">console</span>.log(x1);
+    x1_temp <span class="js_Operator">=</span> x1;
+    x1 <span class="js_Operator">=</span> x2;
+    x2 <span class="js_Operator">+=</span> x1_temp;
+    i<span class="js_Operator">++</span>;
+  }
+}
+
+fib(<span class="js_Number">10</span>)
+
+<hr/>
+
+<span class="coffee_Comment"># CoffeeScript</span>
+fib <span class="coffee_Operator">=</span> <span class="coffee_SpecialChar">(</span>n<span class="coffee_SpecialChar">)</span> <span class="coffee_Operator">-&gt;</span>
+  <span class="coffee_SpecialChar">[</span>x1<span class="coffee_SpecialChar">,</span> x2<span class="coffee_SpecialChar">,</span> i<span class="coffee_SpecialChar">]</span> <span class="coffee_Operator">=</span> <span class="coffee_SpecialChar">[</span><span class="coffee_Number">0</span><span class="coffee_SpecialChar">,</span> <span class="coffee_Number">1</span><span class="coffee_SpecialChar">,</span> <span class="coffee_Number">1</span><span class="coffee_SpecialChar">]</span>
+  <span class="coffee_Repeat">while</span> i <span class="coffee_Operator">&lt;=</span> n
+    console<span class="coffee_Operator">.</span>log x1
+    <span class="coffee_SpecialChar">[</span>x1<span class="coffee_SpecialChar">,</span> x2<span class="coffee_SpecialChar">,</span> i<span class="coffee_SpecialChar">]</span> <span class="coffee_Operator">=</span> <span class="coffee_SpecialChar">[</span>x2<span class="coffee_SpecialChar">,</span> x1<span class="coffee_Operator">+</span>x2<span class="coffee_SpecialChar">,</span> i<span class="coffee_Operator">+</span><span class="coffee_Number">1</span><span class="coffee_SpecialChar">]</span>
+
+fib <span class="coffee_Number">10</span>
+
+<hr/>
+<span class="js_Comment">// Generated by CoffeeScript 1.6.3</span>
+(<span class="js_Type">function</span>() {
+  <span class="js_StorageClass">var</span> fib;
+
+  fib <span class="js_Operator">=</span> <span class="js_Type">function</span>(n) {
+    <span class="js_StorageClass">var</span> i, x1, x2, _ref, _ref1, _results;
+    _ref <span class="js_Operator">=</span> [<span class="js_Number">0</span>, <span class="js_Number">1</span>, <span class="js_Number">1</span>], x1 <span class="js_Operator">=</span> _ref[<span class="js_Number">0</span>], x2 <span class="js_Operator">=</span> _ref[<span class="js_Number">1</span>], i <span class="js_Operator">=</span> _ref[<span class="js_Number">2</span>];
+    _results <span class="js_Operator">=</span> [];
+    <span class="js_Repeat">while</span> (i <span class="js_Operator">&lt;=</span> n) {
+      <span class="js_Special">console</span>.log(x1);
+      _results.push((_ref1 <span class="js_Operator">=</span> [x2, x1 <span class="js_Operator">+</span> x2, i <span class="js_Operator">+</span> <span class="js_Number">1</span>], x1 <span class="js_Operator">=</span> _ref1[<span class="js_Number">0</span>], x2 <span class="js_Operator">=</span> _ref1[<span class="js_Number">1</span>], i <span class="js_Operator">=</span> _ref1[<span class="js_Number">2</span>], _ref1));
+    }
+    <span class="js_Statement">return</span> _results;
+  };
+
+  fib(<span class="js_Number">10</span>);
+
+}).call(<span class="js_Special">this</span>);
+
+</pre>
+</body>
+</html>
+<!-- vim: set foldmethod=manual : -->

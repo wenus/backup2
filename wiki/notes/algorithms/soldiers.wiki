@@ -1,0 +1,86 @@
+%title 韩信点兵问题
+%template code
+
+[[../../index|首页]] - [[../index|Notes]] - [[index|Algorithms]]
+==韩信点兵问题==
+----
+===问题描述===
+
+士兵共有三种不同的排列队形，总人数固定不变（总人数 `>= 10` 且 总人数 `<= 100`）
+
+一种是三人一排，一种是五人一排，还有一种是七人一排
+
+现在让士兵分别按三种队形排列一次，获得每种队形队尾的人数，韩信只根据这三个队尾数据就知道士兵至少有多少人
+
+要求编程实现韩信的计算方法，输入数据为三种队形的队尾人数，输出数据为总人数的最小值，如果没有最小值则输出 `No answer`
+----
+===解题思路===
+
+先得到每一种队形可能的总人数，然后看三种队形中有没有相同的总人数数值，如果有，则选择第一个相同值输出
+----
+===问题求解===
+
+`C语言`
+{{{Clang
+#include <stdio.h>
+
+const int max_number = 100;
+
+void add_sum_number(int num, int other, int *n, int *sum);
+
+
+int main (int argc, char* argv[]) {
+    int a, b, c;                 // 每种队列队尾的人数
+    int sum_a[max_number/3 + 1]; // 3人一排队列的可能总人数
+    int sum_b[max_number/5 + 1]; // 5人一排队列的可能总人数
+    int sum_c[max_number/7 + 1]; // 7人一排队列的可能总人数
+    int an = 0, bn = 0, cn = 0;  // 队列的行数，也就是上面三个数组元素的个数
+    int flag = 0;                // 是否存在三个相同值的标志位
+
+    // 获取队尾人数
+    scanf("%d%d%d", &a, &b, &c);
+
+    // 获取所有可能的总人数数据并存储
+    add_sum_number(3, a, &an, sum_a);
+    add_sum_number(5, b, &bn, sum_b);
+    add_sum_number(7, c, &cn, sum_c);
+
+    // 筛选三种队形中同时存在的数据项
+    for (int i = 0; i <= an; ++i) {
+        for (int j = 0; j <= bn; ++j) {
+            for (int k = 0; k <= cn; ++k) {
+                if (sum_a[i] == sum_b[j] && sum_b[j] == sum_c[k]) {
+                    printf("%d\n", sum_a[i]);
+                    flag = 1;    // 已找到最小值则设置标志位为1
+                    break;       // 然后逐层退出循环（可使用goto代替）
+                }
+            }
+            if (flag) break;
+        }
+        if (flag) break;
+    }
+
+    // 不存在
+    if (!flag) {
+        printf("No answer\n");
+    }
+
+    return 0;
+}
+
+
+// 获取队列所有可能的总人数数据并存储
+void add_sum_number (int num, int other, int *n, int *sum) {
+    int t_sum;
+    for (int i = 0; i <= max_number / num; ++i) {
+        t_sum = num*i + other;
+        if (t_sum >= 10 && t_sum <= 100) {
+            *(sum+i) = t_sum; // 存储数组元素值
+            ++(*n);           // 数组元素个数+1
+        }
+    }
+}
+}}}
+----
+<red>date</red> : 2012-09-16、2014-11-25
+----
