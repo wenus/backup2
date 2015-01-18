@@ -17,18 +17,17 @@ alias chrome='chromium-browser'               # chromium short
 
 
 # For Mac
-export PATH="/usr/local/Cellar/gcc/4.9.2_1/bin:$PATH"
-export PATH="/usr/local/Cellar/php56/5.6.4/bin:$PATH"
+export PATH="/usr/local/sbin:/usr/local/bin:$PATH"
 
 # For Go
-export GOPATH="$HOME/apps/go"
+# export GOPATH="$HOME/apps/go"
 
 # For RVM
-[[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm"
-export PATH="$HOME/.rvm/bin:$PATH"
+# [[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm"
+# export PATH="$HOME/.rvm/bin:$PATH"
 
 # For NVM
-[ -s $HOME/.nvm/nvm.sh ] && . $HOME/.nvm/nvm.sh
+# [ -s $HOME/.nvm/nvm.sh ] && . $HOME/.nvm/nvm.sh
 
 # Other Tools
-export PATH="$HOME/apps:$HOME/apps/go/bin:$HOME/apps/vendor/bin:$HOME/apps/scala/bin:$HOME/apps/elixir/bin:$PATH"
+# export PATH="$HOME/apps:$HOME/apps/go/bin:$HOME/apps/vendor/bin:$HOME/apps/scala/bin:$HOME/apps/elixir/bin:$PATH"
