@@ -33,4 +33,4 @@ export JAVA_HOME=$(/usr/libexec/java_home)
 # [ -s $HOME/.nvm/nvm.sh ] && . $HOME/.nvm/nvm.sh
 
 # Other Tools
-# export PATH="$HOME/apps:$HOME/apps/go/bin:$HOME/apps/vendor/bin:$HOME/apps/scala/bin:$HOME/apps/elixir/bin:$PATH"
+export PATH="$HOME/apps:$HOME/apps/go/bin:$HOME/apps/vendor/bin:$PATH"
