@@ -20,7 +20,10 @@ alias chrome='chromium-browser'               # chromium short
 export PATH="/usr/local/sbin:/usr/local/bin:$PATH"
 
 # For Go
-# export GOPATH="$HOME/apps/go"
+export GOPATH="$HOME/apps/go"
+
+# For Java
+export JAVA_HOME=$(/usr/libexec/java_home)
 
 # For RVM
 # [[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm"
