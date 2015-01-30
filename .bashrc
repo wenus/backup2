@@ -21,6 +21,7 @@ export PATH="/usr/local/sbin:/usr/local/bin:$PATH"
 
 # For Go
 export GOPATH="$HOME/apps/go"
+export PATH="$HOME/apps/go/bin:$PATH"
 
 # For Java
 export JAVA_HOME=$(/usr/libexec/java_home)
@@ -33,4 +34,4 @@ export JAVA_HOME=$(/usr/libexec/java_home)
 # [ -s $HOME/.nvm/nvm.sh ] && . $HOME/.nvm/nvm.sh
 
 # Other Tools
-export PATH="$HOME/apps:$HOME/apps/go/bin:$HOME/apps/vendor/bin:$PATH"
+# export PATH="$HOME/apps:$HOME/apps/vendor/bin:$PATH"

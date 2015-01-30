@@ -23,3 +23,7 @@
 	cmm  = commit -m
 	cma  = commit -a -m
 	lg   = log --pretty=format:'%Cgreen%h %Cblue%t %Creset| [%an] [%ad] %s%d' --graph --date=short --all
+[filter "media"]
+	clean = git media clean %f
+	smudge = git media smudge %f
+	required = true
