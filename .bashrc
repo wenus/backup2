@@ -27,11 +27,11 @@ export PATH="$HOME/apps/go/bin:$PATH"
 export JAVA_HOME=$(/usr/libexec/java_home)
 
 # For RVM
-# [[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm"
-# export PATH="$HOME/.rvm/bin:$PATH"
+[[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm"
+export PATH="$HOME/.rvm/bin:$PATH"
 
 # For NVM
-# [ -s $HOME/.nvm/nvm.sh ] && . $HOME/.nvm/nvm.sh
+[ -s $HOME/.nvm/nvm.sh ] && . $HOME/.nvm/nvm.sh
 
 # Other Tools
 # export PATH="$HOME/apps:$HOME/apps/vendor/bin:$PATH"
