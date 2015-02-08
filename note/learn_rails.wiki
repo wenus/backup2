@@ -1,0 +1,101 @@
+%title Rails 学习笔记
+%template code
+
+[[../../index|首页]] - [[../index|Notes]] - [[index|2015]]
+==Rails 学习笔记==
+----
+===框架惯例===
+
+控制器名用复数
+
+数据模型名用单数，但对应的数据表名用复数
+
+用命令生成数据模型时，用冒号分隔字段名和字段类型，字段名在前，字段数据类型在后
+
+局部模版文件名以下划线开头
+----
+===常用工具===
+
+在控制器中打印接收到的所有表单数据：`render plain: params`
+----
+===Active Record===
+
+默认会把模型的类名转换成复数，然后把其当成对应数据表的表名；多个单词的模型类名用驼峰命名法，与之对应的数据表名用下划线分隔；主键字段默认是 `id`
+
+下面是几个对应示例：
+# `Mouse` 对应 `mice`
+# `Person` 对应 `people`
+# `BookStore` 对应 `book_stores`
+
+可以用 `self.table_name` 指定表名，用 `self.primary_key` 指定主键，如：
+{{{Ruby
+class Product < ActiveRecord::Base
+  self.table_name  = 'product'
+  self.primary_key = 'product_id'
+end
+}}}
+
+====创建数据 [C]====
+# 直接创建并保存
+{{{Ruby
+user = User.create name: 'Ruchee', email: 'my@ruchee.com'
+}}}
+# 先创建空的记录，再填充数据，最后保存
+{{{Ruby
+user = User.new
+user.name  = 'Ruchee'
+user.email = 'my@ruchee.com'
+user.save
+}}}
+# 创建记录并在块中填充数据，最后保存
+{{{Ruby
+user = User.new do |u|
+  u.name  = 'Ruchee'
+  u.email = 'my@ruchee.com'
+end
+user.save
+}}}
+
+====读取数据 [R]====
+# 读取全部
+{{{Ruby
+users = User.all
+}}}
+# 取第一条记录
+{{{Ruby
+user = User.first
+}}}
+# 根据条件取第一条匹配的记录
+{{{Ruby
+ruchee = User.find_by name: 'Ruchee'
+}}}
+# 根据条件取所有匹配的记录，并指定排序规则
+{{{Ruby
+users = User.where(name: 'Ruchee').order('created_at DESC')
+}}}
+
+====更新数据 [U]====
+# 取出一条记录，修改属性后再存回数据库
+{{{Ruby
+user = User.find_by name: 'Ruchee'
+user.name = 'Ruchee2'
+user.save
+}}}
+# 找到指定记录后直接更新属性
+{{{Ruby
+User.find_by(name: 'Ruchee').update(name: 'Ruchee2')
+}}}
+# 批量更新所有记录
+{{{Ruby
+User.update_all "name = 'Ruchee2', email = 'my2@ruchee.com'"
+}}}
+
+====删除数据 [D]====
+# 找到指定记录后删除
+{{{Ruby
+user = User.find_by name: 'Ruchee'
+user.destroy
+}}}
+----
+<red>date</red>：2015-02-05、2015-02-06、2015-02-07
+----

@@ -1,0 +1,50 @@
+%title Elixir 学习笔记
+%template code
+
+[[../../index|首页]] - [[../index|Notes]] - [[index|2015]]
+==Elixir 学习笔记==
+----
+===与其他语言不同的地方===
+
+`Elixir` 的语法主要借鉴自 `Ruby`，但其与 `Ruby` 还是存在显著的差异，下面是基本的几个区别：
+# `Elixir` 的方法不能在顶层单独定义，必须归属于某个指定的模块
+# `Elixir` 定义带参数的方法时，方法名跟参数表列的括号间不能有空格
+# `Elixir` 定义方法需要带 `do`，而 `Ruby` 则不需要
+
+下面是一个简单方法在两语言里面不同的写法，首先是 `Ruby`：
+{{{Ruby
+def hello (name)
+  puts "Hello #{name}"
+end
+
+hello 'Ruchee'
+}}}
+
+然后是 `Elixir`：
+{{{Elixir
+defmodule Hello do
+  def hello(name) do
+    IO.puts "Hello, #{name}"
+  end
+end
+
+Hello.hello 'Ruchee'
+}}}
+----
+===语言理念===
+
+数据赋值后不会再变更
+----
+===基本语法===
+
+`Elixir` 的赋值操作实质是模式匹配，其中 `_` 可以消耗一个不需要的匹配
+----
+===常用工具===
+
+====iex====
+* `h()`：查看各种模块的用法，如 `h(IO)` 或 `h IO`
+* `c()`：编译源文件，如 `c "hello.exs"`
+* `import_file()`：加载源文件，如 `import_file "hello.exs"`
+----
+<red>date</red>：2015-01-21、2015-01-22
+----
