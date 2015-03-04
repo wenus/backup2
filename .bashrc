@@ -4,7 +4,7 @@ PS1='${debian_chroot:+($debian_chroot)}\[\033[01;32m\]Ruchee\[\033[00m\]: \[\033
 platform='linux'
 if [ `uname` == 'FreeBSD' ]; then
   platform='freebsd'
-elif [ `uname` == 'Mac' ]; then
+elif [ `uname` == 'Darwin' ]; then
   platform='mac'
 elif [[ `uname` =~ ^CYGWIN ]]; then
   platform='cygwin'
@@ -14,7 +14,7 @@ fi
 if [ $platform == 'linux' ] || [ $platform == 'cygwin' ]; then
   alias ls='ls -hF --color=auto'
 else
-  alias ls='ls -G'
+  alias ls='ls -hF -G'
 fi
 alias ll='ls -l'
 alias la='ls -A'
