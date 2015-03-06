@@ -28,8 +28,8 @@ if [ $platform == 'mac' ]; then
 fi
 
 # For Go
-export GOPATH="$HOME/Go"
-export PATH="$HOME/Go/bin:$PATH"
+# export GOPATH="$HOME/apps/go"
+# export PATH="$HOME/apps/go/bin:$PATH"
 
 # For Java
 if [ $platform == 'mac' ]; then
