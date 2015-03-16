@@ -1,9 +1,0 @@
-%title Java
-
-[[../../index|首页]] - [[../index|Note]]
-==Java==
-----
-<h2>
-* [[java_cmd_compile|Java程序在命令行下的编译方法]]
-</h2>
-----

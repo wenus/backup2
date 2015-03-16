@@ -1,4 +1,0 @@
-%title Perl
-
-[[../../index|首页]] - [[../index|Note]]
-==Perl==

@@ -1,1 +1,0 @@
-SyntaxHighlighter.brushes.Other = function () {    this.regexList = [        {regex:SyntaxHighlighter.regexLib.singleLinePerlComments,css:'comments'},        {regex:/^\-[^\-]{1}.*$/gm,css:'comments'}    ]};SyntaxHighlighter.brushes.Other.prototype = new SyntaxHighlighter.Highlighter();SyntaxHighlighter.brushes.Other.aliases   = ['other', 'Other'];

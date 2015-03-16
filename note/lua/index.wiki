@@ -1,9 +1,0 @@
-%title Lua
-
-[[../../index|首页]] - [[../index|Note]]
-==Lua==
-----
-<h2>
-* [[lua_pilua3_note|《Programming in Lua 3rd Edition》读书笔记]]
-</h2>
-----

@@ -1,9 +1,0 @@
-%title Base
-
-[[../../index|首页]] - [[../index|Note]]
-==Base==
-----
-<h2>
-* [[regex_note|正则表达式笔记]]
-</h2>
-----
