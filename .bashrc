@@ -41,7 +41,7 @@ fi
 # export PATH="$HOME/.rvm/bin:$PATH"
 
 # For NVM
-[ -s $HOME/.nvm/nvm.sh ] && . $HOME/.nvm/nvm.sh
+# [ -s $HOME/.nvm/nvm.sh ] && . $HOME/.nvm/nvm.sh
 
 # For Other Tools
-export PATH="$HOME/apps:$HOME/apps/vendor/bin:$PATH"
+# export PATH="$HOME/apps:$HOME/apps/vendor/bin:$PATH"
