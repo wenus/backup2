@@ -33,8 +33,8 @@ if [ $platform == 'mac' ]; then
 fi
 
 # For Go
-# export GOPATH="$HOME/apps/go"
-# export PATH="$HOME/apps/go/bin:$PATH"
+export GOPATH="$HOME/apps/go"
+export PATH="$HOME/apps/go/bin:$PATH"
 
 # For RVM
 # [[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm"
