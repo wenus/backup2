@@ -33,15 +33,15 @@ if [ $platform == 'mac' ]; then
 fi
 
 # For Go
-# export GOPATH="$HOME/apps/go"
-# export PATH="$HOME/apps/go/bin:$PATH"
+export GOPATH="$HOME/apps/go"
+export PATH="$HOME/apps/go/bin:$PATH"
 
 # For RVM
 # [[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm"
 # export PATH="$HOME/.rvm/bin:$PATH"
 
 # For NVM
-# [ -s $HOME/.nvm/nvm.sh ] && . $HOME/.nvm/nvm.sh
+[ -s $HOME/.nvm/nvm.sh ] && . $HOME/.nvm/nvm.sh
 
 # For Other Tools
 # export PATH="$HOME/apps:$HOME/apps/vendor/bin:$PATH"
