@@ -44,4 +44,4 @@ export PATH="$HOME/.rvm/bin:$PATH"
 [ -s $HOME/.nvm/nvm.sh ] && . $HOME/.nvm/nvm.sh
 
 # For Other Tools
-# export PATH="$HOME/apps:$HOME/apps/vendor/bin:$PATH"
+export PATH="$HOME/apps:$HOME/apps/vendor/bin:$PATH"
