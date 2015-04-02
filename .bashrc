@@ -22,6 +22,13 @@ alias cls='clear'
 alias grep='grep --color'
 
 
+# 加载Promptline脚本
+promptline_file="$HOME/.promptline"
+if [ -e "$promptline_file" ]; then
+  source "$promptline_file"
+fi
+
+
 # For Mac
 if [ $platform == 'mac' ]; then
   export PATH="/usr/local/sbin:/usr/local/bin:$PATH"
