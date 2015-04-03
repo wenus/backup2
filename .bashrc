@@ -21,6 +21,11 @@ alias la='ls -A'
 alias cls='clear'
 alias grep='grep --color'
 
+alias sphp='find . -type f -name "*.php" | xargs grep -n '
+alias sjs='find . -type f -name "*.js" | xargs grep -n '
+alias scss='find . -type f -name "*.css" | xargs grep -n '
+alias shtml='find . -type f -name "*.html" | xargs grep -n '
+
 
 # 加载Promptline脚本
 promptline_file="$HOME/.promptline"
